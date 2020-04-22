@@ -1,0 +1,153 @@
+$header-linkColor: #fff;
+$hover-color: #00CCCC;
+$main-backgroud: #eee;
+
+* {
+  box-sizing: border-box;
+}
+
+.wrapper{
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  padding-bottom: 90px;
+}
+
+// ここから下はヘッダーの部分
+
+.header{
+  height: 80px;
+  width: 100%;
+  background-color: #000077;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  z-index: 1;
+}
+.left-box{
+  padding: 15px 10px;
+  width: 250px;
+  background-color: $main-backgroud;
+
+  &__link{
+  height: 50px;
+  line-height: 80px;
+
+  &--logo{
+    width: 230px;
+    padding: 0px 10px;
+  }
+  }
+}
+
+.right-box{
+  height: 80px;
+  width: 200px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-right: 20px;
+  
+  &__content{
+    height: 80px;
+    width: 100px;
+    float: left;
+    font-size: 16px;
+    line-height: 80px;
+    text-align: center;
+
+    &--signup{
+      text-decoration: none;
+      color: $header-linkColor;
+      transition: color 0.3s;
+
+      &:hover{
+        color: #00CCCC;
+      }
+    }
+
+    &--signin{
+      text-decoration: none;
+      color: $header-linkColor;
+      border: 2px solid #00CCCC;
+      border-radius: 5px;
+      padding: 11px 15px;
+      transition: color 0.3s;
+
+      &:hover{
+        color: #00CCCC;
+      }
+    }
+  }
+}
+
+// ここから下はメイン部分
+
+.main-contents{
+  width: 100%;
+  height: calc(100% - 80px);
+  padding-top: 80px;
+  background-color: $main-backgroud;
+}
+
+// メインの常に表示する部分
+
+.contents{
+  display: flex;
+  padding: 20px;
+  width: 100%;
+  height: 900px;
+  display: flex;
+}
+
+.introduction{
+  height: 900px;
+  width: 100%;
+  background-color: black;
+}
+
+
+
+// ここから下はフッター部分
+
+.footer{
+  position: absolute;
+  bottom: 0;
+  height: 90px;
+  width: 100%;
+  background-color: #000077;
+  padding: 10px 15px;
+
+  &__image{
+    text-align: center;
+
+    &--logo{
+      width: 150px;
+    }
+  }
+
+  &__under{
+    height: 30px;
+    width: 280px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+
+    &__link{
+      margin-right: 5px;
+      color: #00CCCC;
+    }
+
+    a{
+      text-decoration: none;
+      font-size: 16px;
+      color:$header-linkColor;
+      transition: color 0.3s;
+
+      &:hover{
+        color: #00CCCC;
+      }
+    }
+  }
+}
