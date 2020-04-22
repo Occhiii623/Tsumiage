@@ -1,0 +1,41 @@
+.post-area{
+  width: 60%;
+  height: 450px;
+  background-color: #fff;
+  margin: 60px auto 0px;
+  max-width: 800px;
+  border-radius: 15px;
+  padding: 10px;
+  box-shadow: 2px 2px 6px gray;
+}
+
+.head-bar{
+  height: 80px;
+  font-size: 40px;
+  line-height: 80px;
+  padding-left: 20px;
+  color: #ddd;
+  font-weight: bold;
+}
+
+.form-error{
+  color: red;
+  margin: 0px 0px 5px 30px
+}
+
+.input-box{
+  width: 90%;
+  margin: 0 auto;
+
+  &__text{
+    height: 10em;
+    width: 100%;
+    padding: 10px;
+    resize: none;
+  }
+
+  &__image{
+    background-color: orangered;
+  }
+}
+

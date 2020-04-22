@@ -1,123 +1,14 @@
 .posts-table
-  .post
-    .post__upper
-      %img{ src: "/assets/default.png", alt: "icon", class: "post__upper__img"}
-      .post__upper__right
-        .post__upper__right--user-name
-          まゆみ
-        .post__upper__right--date
-          2020年4月20日 20:38
-    .post__content
-      昨日は、個人アプリのView作成をしていました！
-      もっとがんばりたいです！
-      そのためにはどうしたらいいか考えなきゃ。
-
-  .post
-    .post__upper
-      %img{ src: "/assets/default.png", alt: "icon", class: "post__upper__img"}
-      .post__upper__right
-        .post__upper__right--user-name
-          まゆみ
-        .post__upper__right--date
-          2020年4月20日 20:38
-    .post__content
-      昨日は、個人アプリのView作成をしていました！
-      もっとがんばりたいです！
-      そのためにはどうしたらいいか考えなきゃ。
-
-  .post
-    .post__upper
-      %img{ src: "/assets/default.png", alt: "icon", class: "post__upper__img"}
-      .post__upper__right
-        .post__upper__right--user-name
-          まゆみ
-        .post__upper__right--date
-          2020年4月20日 20:38
-    .post__content
-      昨日は、個人アプリのView作成をしていました！
-      もっとがんばりたいです！
-      そのためにはどうしたらいいか考えなきゃ。
-  .post
-    .post__upper
-      %img{ src: "/assets/default.png", alt: "icon", class: "post__upper__img"}
-      .post__upper__right
-        .post__upper__right--user-name
-          まゆみ
-        .post__upper__right--date
-          2020年4月20日 20:38
-    .post__content
-      昨日は、個人アプリのView作成をしていました！
-      もっとがんばりたいです！
-      そのためにはどうしたらいいか考えなきゃ。
-  .post
-    .post__upper
-      %img{ src: "/assets/default.png", alt: "icon", class: "post__upper__img"}
-      .post__upper__right
-        .post__upper__right--user-name
-          まゆみ
-        .post__upper__right--date
-          2020年4月20日 20:38
-    .post__content
-      昨日は、個人アプリのView作成をしていました！
-      もっとがんばりたいです！
-      そのためにはどうしたらいいか考えなきゃ。
-  .post
-    .post__upper
-      %img{ src: "/assets/default.png", alt: "icon", class: "post__upper__img"}
-      .post__upper__right
-        .post__upper__right--user-name
-          まゆみ
-        .post__upper__right--date
-          2020年4月20日 20:38
-    .post__content
-      昨日は、個人アプリのView作成をしていました！
-      もっとがんばりたいです！
-      そのためにはどうしたらいいか考えなきゃ。
-  .post
-    .post__upper
-      %img{ src: "/assets/default.png", alt: "icon", class: "post__upper__img"}
-      .post__upper__right
-        .post__upper__right--user-name
-          まゆみ
-        .post__upper__right--date
-          2020年4月20日 20:38
-    .post__content
-      昨日は、個人アプリのView作成をしていました！
-      もっとがんばりたいです！
-      そのためにはどうしたらいいか考えなきゃ。
-  .post
-    .post__upper
-      %img{ src: "/assets/default.png", alt: "icon", class: "post__upper__img"}
-      .post__upper__right
-        .post__upper__right--user-name
-          まゆみ
-        .post__upper__right--date
-          2020年4月20日 20:38
-    .post__content
-      昨日は、個人アプリのView作成をしていました！
-      もっとがんばりたいです！
-      そのためにはどうしたらいいか考えなきゃ。
-  .post
-    .post__upper
-      %img{ src: "/assets/default.png", alt: "icon", class: "post__upper__img"}
-      .post__upper__right
-        .post__upper__right--user-name
-          まゆみ
-        .post__upper__right--date
-          2020年4月20日 20:38
-    .post__content
-      昨日は、個人アプリのView作成をしていました！
-      もっとがんばりたいです！
-      そのためにはどうしたらいいか考えなきゃ。
-  .post
-    .post__upper
-      %img{ src: "/assets/default.png", alt: "icon", class: "post__upper__img"}
-      .post__upper__right
-        .post__upper__right--user-name
-          まゆみ
-        .post__upper__right--date
-          2020年4月20日 20:38
-    .post__content
-      昨日は、個人アプリのView作成をしていました！
-      もっとがんばりたいです！
-      そのためにはどうしたらいいか考えなきゃ。
+  .posts-table__container
+    - @posts.each do |post|
+      .post
+        .post__upper
+          %img{ src: "/assets/default.png", alt: "icon", class: "post__upper__img"}
+          .post__upper__right
+            .post__upper__right--user-name
+              = post.user.nickname
+            .post__upper__right--date
+              = post.created_at.strftime("%Y年%m月%d日 %H時%M分")
+        .post__content
+          %p
+            = simple_format(post.text)

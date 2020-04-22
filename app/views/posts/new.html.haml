@@ -1,0 +1,16 @@
+.top-box
+  = form_with(model: @post, local: true) do |form|
+    .post-area
+      .head-bar
+        %p
+          投稿する
+      - @post.errors.full_messages.each do |message|
+        .form-error
+          = message
+      .input-box
+        = form.text_area :text, placeholder: "今日の#TSUMIAGE", row: "10", id: "text", class: "input-box__text"
+        = form.label :image do
+          .input-box__image
+            = icon('fas', 'camera', class: 'input-box__image--icon')
+            -# = f.file_field :image, class: "input-box__image--file"
+        = form.submit "Send", class: "submit-btn"

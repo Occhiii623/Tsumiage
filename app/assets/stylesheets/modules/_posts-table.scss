@@ -7,17 +7,24 @@
   box-shadow: 2px 2px 6px gray;
   padding: 20px;
   overflow: scroll;
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
+  // display: flex;
+  // justify-content: space-around;
+  // flex-wrap: wrap;
+
+  &__container{
+    width: 95%;
+    height: 100%;
+    margin: 0 auto;
+  }
 }
 
 .post{
-  height: 200px;
-  width: 250px;
+  height: 250px;
+  width: 280px;
   margin: 0 15px 15px 0;
   background-color: #E6E6FA;
   padding: 10px;
+  float: left;
     
 
   &__upper{
@@ -48,7 +55,11 @@
   }
 
   &__content{
-    font-size: 16px;
+    font-size: 14px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 6;
   }
 }
 
