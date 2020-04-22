@@ -10,7 +10,7 @@
   %body
     .header
       .left-box
-        = link_to "#", class: "left-box__link" do
+        = link_to root_path, class: "left-box__link" do
           %img{ src: "/assets/logo.png", alt: "logo", class: "left-box__link--logo" }
 
       .right-box
@@ -18,5 +18,5 @@
           = link_to "新規登録", new_user_registration_path, class: "right-box__content--signup"
         .right-box__content
           = link_to "ログイン", new_user_session_path, class: "right-box__content--signin"
-
+    = render 'layouts/notification'
     = yield
