@@ -3,7 +3,7 @@
     - @posts.each do |post|
       .post
         .post__upper
-          %img{ src: "/assets/default.png", alt: "icon", class: "post__upper__img"}
+          = image_tag post.user.icon.to_s, class: 'post__upper__img', size: '80x80'
           .post__upper__right
             .post__upper__right--user-name
               = post.user.nickname
