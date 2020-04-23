@@ -1,1 +1,134 @@
+$profile-textColor: #444;
+$profile-leftColor: #00CCCC;
+
 // showページのscss
+.container{
+  width: 70%;
+  height: 100%;
+  background-color: #fff;
+  margin: 0 auto;
+  box-shadow: 2px 2px 6px gray;
+  border-radius: 15px;
+
+  &__box{
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+  }
+}
+
+.profile{
+  height: 400px;
+  width: 100%;
+  padding: 20px;
+  display: flex;
+
+  &__left{
+    height: 360px;
+    width: 380px;
+    // background-color: gray;
+    margin-right: 20px;
+
+    &__upper{
+      height: 300px;
+      width: 300px;
+      margin: 0 auto;
+      background-color: #fff;
+
+      &--img{
+        width: 300px;
+        border: 10px solid $profile-leftColor;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+    }
+
+    &__under{
+      text-align: center;
+      margin-top: 25px;
+
+      &--edit{
+      text-decoration: none;
+      color: $profile-leftColor;
+      border: 2px solid $profile-leftColor;
+      border-radius: 30px;
+      padding: 11px 15px;
+      transition: color 0.3s;
+
+      &:hover{
+        background-color: $profile-leftColor;
+        color: #fff;
+      }
+      }
+    }
+  }
+
+  &__right{
+    height: 360px;
+    width: calc(100% - 380px);
+    background-color: #fff;
+    &__title{
+      height: 52px;
+      color: #FF0461;
+      font-size: 40px;
+      border-bottom: 2px solid #FF0461;
+      margin: 10px 0px 2px;
+      display: flex;
+      align-items: center;
+
+      &--icon{
+        margin-right: 10px;
+      }
+
+      &--text{
+        font-size: 20px;
+        font-weight: bold;
+      }
+    }
+
+    &__user-name{
+      margin-top: 10px;
+      font-size: 30px;
+      color: $profile-textColor;
+    }
+
+    &__introduction{
+      margin-left: 10px;
+      height: 150px;
+      color: $profile-textColor;
+      font-size: 16px;
+    }
+
+    &__url{
+      color: $profile-textColor;
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+
+    &__tags{
+      font-size: 16px;
+      color: $profile-textColor;
+      text-align: 24px;
+      height: 61px;
+
+      &--icon{
+        margin: 5px 5px 0px 0px;
+        float: left;
+        height: 56px;
+      }
+
+      &--name{
+        margin-right: 5px;
+        background-color: #FF0461;
+        border: 2px solid #FF0461;
+        color: #fff;
+        border-radius: 30px;
+        padding: 0px 10px;
+        float: left;
+        margin-bottom: 3px;
+      }
+    }
+  }
+
+}
+
