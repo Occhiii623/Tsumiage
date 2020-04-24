@@ -4,7 +4,6 @@
       .profile
         .profile__left
           .profile__left__upper{ style: "background-image: url(#{@icon.to_s})" }
-            -# = image_tag @icon.to_s, class: 'profile__left__upper--img'
           .profile__left__under
             = link_to "プロフィール編集", edit_user_registration_path, class: "profile__left__under--edit"
         .profile__right

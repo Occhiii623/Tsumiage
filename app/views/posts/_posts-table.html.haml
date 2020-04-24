@@ -3,7 +3,8 @@
     -# postタグに背景画像を表示するコードを紐付ける
     .post{ style: "background-image: url(#{post.image.to_s})" }
       .post__upper
-        = image_tag post.user.icon.to_s, class: 'post__upper__img'
+        = link_to user_path(post.user) do
+          = image_tag post.user.icon.to_s, class: 'post__upper__img'
         .post__upper__right
           .post__upper__right--user-name
             = post.user.nickname
