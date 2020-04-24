@@ -13,14 +13,28 @@
   flex-wrap: wrap;
 }
 
-.post{
+.link-table{
+  flex-grow: 1;
+  display: block;
   height: 260px;
   width: 280px;
   margin: 0 20px 20px 0;
+  text-decoration: none;
+}
+
+.post{
+  height: 100%;
+  width: 100%;
   background-color: #E6E6FA;
   background-size: cover;
+  background-position: center;
   padding: 10px;
-  flex-grow: 1;
+  transition:transform 0.3s;
+  border-radius: 15px;
+
+  &:hover{
+    transform:scale(1.1);
+  }
 
   &__upper{
     display: flex;
@@ -58,11 +72,11 @@
       }
 
       &--user-name{
-        font-size: 14px;
+        font-size: 15px;
       }
 
       &--date{
-        font-size: 11px;
+        font-size: 12px;
       }
     }
   }
