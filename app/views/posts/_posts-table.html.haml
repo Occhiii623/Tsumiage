@@ -1,14 +1,14 @@
 .posts-table
-  .posts-table__container
-    - @posts.each do |post|
-      .post
-        .post__upper
-          = image_tag post.user.icon.to_s, class: 'post__upper__img'
-          .post__upper__right
-            .post__upper__right--user-name
-              = post.user.nickname
-            .post__upper__right--date
-              = post.created_at.strftime("%Y年%m月%d日 %H時%M分")
-        .post__content
-          %p
-            = simple_format(post.text)
+  - @posts.each do |post|
+    -# postタグに背景画像を表示するコードを紐付ける
+    .post{ style: "background-image: url(#{post.image.to_s})" }
+      .post__upper
+        = image_tag post.user.icon.to_s, class: 'post__upper__img'
+        .post__upper__right
+          .post__upper__right--user-name
+            = post.user.nickname
+          .post__upper__right--date
+            = post.created_at.strftime("%Y年%m月%d日 %H時%M分")
+      .post__content
+        %p
+          = simple_format(post.text)

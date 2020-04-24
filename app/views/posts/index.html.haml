@@ -1,19 +1,7 @@
-.wrapper
-  .main-contents
-    .contents
-      = render "posts-table"
-      = render "tags-table"
+.main-contents
+  .contents
+    = render "posts-table"
+    = render "tags-table"
 
-    .introduction
-      = render "introduction"
-
-  .footer
-    .footer__image
-      %img{ src: "/assets/logo-white.png", alt: "logo", class: "footer__image--logo" }
-    .footer__under
-      .footer__under__link
-        = link_to "作者について", "#"
-      .footer__under__link
-        |
-      .footer__under__link
-        = link_to "お問い合わせ", "#"
+  .introduction
+    = render "introduction"
