@@ -34,13 +34,10 @@ $profile-leftColor: #00CCCC;
       width: 300px;
       margin: 0 auto;
       background-color: #fff;
-
-      &--img{
-        width: 300px;
-        border: 10px solid $profile-leftColor;
-        border-radius: 50%;
-        object-fit: cover;
-      }
+      border: 10px solid $profile-leftColor;
+      border-radius: 50%;
+      background-position: center;
+      background-size: cover;
     }
 
     &__under{
@@ -106,6 +103,11 @@ $profile-leftColor: #00CCCC;
       &--link{
         color: $profile-leftColor;
         text-decoration: none;
+        transition: color 0.2s;
+
+      &:hover{
+        color: #0000FF;
+      }
       }
     }
 
