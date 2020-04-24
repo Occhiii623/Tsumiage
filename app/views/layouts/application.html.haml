@@ -8,15 +8,37 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    .header
-      .left-box
-        = link_to root_path, class: "left-box__link" do
-          %img{ src: "/assets/logo.png", alt: "logo", class: "left-box__link--logo" }
-
-      .right-box
-        .right-box__content
-          = link_to "新規登録", new_user_registration_path, class: "right-box__content--signup"
-        .right-box__content
-          = link_to "ログイン", new_user_session_path, class: "right-box__content--signin"
-    = render 'layouts/notification'
-    = yield
+    .wrapper
+      .header
+        .left-box
+          = link_to root_path, class: "left-box__link" do
+            %img{ src: "/assets/logo.png", alt: "logo", class: "left-box__link--logo" }
+        
+        - if user_signed_in?
+          .right-box-session
+            .right-box__content
+              = link_to user_path(current_user.id), class: "right-box__content--user-name" do
+                = current_user.nickname
+            .right-box__content
+              = link_to "投稿する", new_post_path, class: "right-box__content--post"
+            .right-box__content
+              = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "right-box__content--logout"
+        - else
+          .right-box
+            .right-box__content
+              = link_to "新規登録", new_user_registration_path, class: "right-box__content--signup"
+            .right-box__content
+              = link_to "ログイン", new_user_session_path, class: "right-box__content--signin"
+      = render 'layouts/notification'
+      = yield
+  
+      .footer
+        .footer__image
+          %img{ src: "/assets/logo-white.png", alt: "logo", class: "footer__image--logo" }
+        .footer__under
+          .footer__under__link
+            = link_to "作者について", "#"
+          .footer__under__link
+            |
+          .footer__under__link
+            = link_to "お問い合わせ", "#"

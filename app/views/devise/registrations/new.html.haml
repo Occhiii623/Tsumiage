@@ -6,9 +6,9 @@
     = render "devise/shared/error_messages", resource: resource
     .field
       = f.label :nickname
-      %em (6 characters maximum)
+      %em (14 characters maximum)
       %br/
-      = f.text_field :nickname, autofocus: true, autocomplete: "off", maxlength: "6"
+      = f.text_field :nickname, autofocus: true, autocomplete: "off", maxlength: "28"
     .field
       = f.label :email
       %br/

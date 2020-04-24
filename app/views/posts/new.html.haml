@@ -1,0 +1,22 @@
+.top-box
+  = form_with(model: @post, local: true) do |form|
+    .post-area
+      .head-bar
+        %p
+          投稿する
+      - @post.errors.full_messages.each do |message|
+        .form-error
+          = message
+      .input-box
+        .input-box__text
+          = form.text_area :text, placeholder: "今日の#TSUMIAGE", row: "10", id: "text", class: "input-box__text--input"
+          = form.label :image do
+            .input-box__image
+              = icon('fas', 'camera', class: 'input-box__image--icon')
+              = form.file_field :image, class: "hidden"
+        -# tagsテーブルを導入したら、タグ検索機能を実装します
+        -# ↓↓↓↓
+        %input.input-box__search-tag{ placeholder: "積み上げたことに関連するタグを5つまで入力"}
+      
+      .submit
+        = form.submit "Send", class: "submit__btn"

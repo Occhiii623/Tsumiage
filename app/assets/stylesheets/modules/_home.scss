@@ -22,7 +22,7 @@ $main-backgroud: #eee;
   display: flex;
   justify-content: space-between;
   position: fixed;
-  z-index: 1;
+  z-index: 3;
 }
 .left-box{
   padding: 15px 10px;
@@ -78,8 +78,38 @@ $main-backgroud: #eee;
         color: #00CCCC;
       }
     }
+    &--post{
+      text-decoration: none;
+      color: $header-linkColor;
+      transition: color 0.3s;
+
+      &:hover{
+        color: #00CCCC;
+      }
+    }
+    &--logout{
+      text-decoration: none;
+      color: $header-linkColor;
+      transition: color 0.3s;
+
+      &:hover{
+        color: #00CCCC;
+      }
+    }
+
+    &--user-name{
+      text-decoration: none;
+      color: $header-linkColor;
+      transition: color 0.3s;
+
+      &:hover{
+        color: #00CCCC;
+      }
+    }
   }
 }
+
+
 
 // ここから下はメイン部分
 

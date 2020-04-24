@@ -1,0 +1,35 @@
+.top-box
+  .container
+    .container__box
+      .profile
+        .profile__left
+          .profile__left__upper
+            = image_tag @icon.to_s, class: 'profile__left__upper--img'
+          .profile__left__under
+            = link_to "プロフィール編集", "#", class: "profile__left__under--edit"
+        .profile__right
+          .profile__right__title
+            = icon('fas', 'user-circle', class: "profile__right__title--icon")
+            .profile__right__title--text
+              プロフィール
+          .profile__right__user-name
+            = @nickname
+          .profile__right__introduction
+            = @introduction
+          .profile__right__url
+            = icon('fas', 'link')
+            = @URL
+          .profile__right__tags
+            = icon('fas', 'tags', class: 'profile__right__tags--icon')
+            -# each文でuserに紐付いているtagをすべて表示
+            .profile__right__tags--name
+              -# tagsテーブル作ったら、紐付けをする。
+              プログラミング
+            .profile__right__tags--name
+              料理
+            .profile__right__tags--name
+              筋トレ
+            -# .profile__right__tags--name
+            -#   読書
+            -# .profile__right__tags--name
+            -#   美容
