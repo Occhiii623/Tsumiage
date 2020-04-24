@@ -6,7 +6,7 @@
           .profile__left__upper
             = image_tag @icon.to_s, class: 'profile__left__upper--img'
           .profile__left__under
-            = link_to "プロフィール編集", "#", class: "profile__left__under--edit"
+            = link_to "プロフィール編集", edit_user_registration_path, class: "profile__left__under--edit"
         .profile__right
           .profile__right__title
             = icon('fas', 'user-circle', class: "profile__right__title--icon")
@@ -18,7 +18,7 @@
             = @introduction
           .profile__right__url
             = icon('fas', 'link')
-            = @URL
+            = link_to "#{@URL}", @URL, class: "profile__right__url--link"
           .profile__right__tags
             = icon('fas', 'tags', class: 'profile__right__tags--icon')
             -# each文でuserに紐付いているtagをすべて表示
