@@ -1,4 +1,4 @@
-.top-box
+.main
   .container
     .container__box
       .profile
@@ -18,7 +18,11 @@
               = simple_format(@introduction)
           .profile__right__url
             = icon('fas', 'link')
-            = link_to "#{@URL}", @URL, class: "profile__right__url--link"
+            - unless @URL.blank?
+              = link_to "#{@URL}", @URL, class: "profile__right__url--link"
+            - else
+              %p.profile__right__url--none
+                ※URLはまだ設定されていません
           .profile__right__tags
             = icon('fas', 'tags', class: 'profile__right__tags--icon')
             -# each文でuserに紐付いているtagをすべて表示
@@ -29,7 +33,10 @@
               料理
             .profile__right__tags--name
               筋トレ
-            -# .profile__right__tags--name
-            -#   読書
-            -# .profile__right__tags--name
-            -#   美容
+            .profile__right__tags--name
+              読書
+            .profile__right__tags--name
+              美容
+      
+
+      .mypost

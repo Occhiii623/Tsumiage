@@ -15,12 +15,14 @@
  */
 
 @import "reset";
-@import "./config/colors";
+@import "config/colors";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "modules/flash";
 @import "modules/home";
 @import "modules/posts-table";
 @import "modules/tags-table";
 @import "modules/new-post";
-@import "modules/devise";
-@import "modules/flash";
+@import "modules/signup-in";
+@import "modules/show-post";
+@import "modules/mypage";
