@@ -9,6 +9,7 @@ class User < ApplicationRecord
   validates :URL, url: { allow_blank: true }
 
   has_many :posts
+  has_many :comments
   mount_uploader :icon, IconUploader
 
 
