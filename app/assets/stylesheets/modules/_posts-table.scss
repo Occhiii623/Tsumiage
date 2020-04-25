@@ -16,7 +16,7 @@
 .link-table{
   flex-grow: 1;
   display: block;
-  height: 260px;
+  height: auto;
   width: 280px;
   margin: 0 20px 20px 0;
   text-decoration: none;
@@ -85,6 +85,7 @@
   &__content{
     padding: 3px 5px 3px 5px;
     font-size: 13px;
+    height: 140;
     overflow: hidden;
     display: -webkit-box;
     -webkit-box-orient: vertical;
