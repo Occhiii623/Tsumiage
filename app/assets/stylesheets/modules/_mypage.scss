@@ -3,12 +3,13 @@ $profile-leftColor: #00CCCC;
 
 // showページのscss
 .container{
-  width: 70%;
+  width: 800px;
   height: 100%;
   background-color: #fff;
   margin: 0 auto;
   box-shadow: 2px 2px 6px gray;
   border-radius: 15px;
+  margin-top: 30px;
 
   &__box{
     height: 100%;
@@ -26,7 +27,6 @@ $profile-leftColor: #00CCCC;
   &__left{
     height: 360px;
     width: 380px;
-    // background-color: gray;
     margin-right: 20px;
 
     &__upper{
@@ -34,14 +34,12 @@ $profile-leftColor: #00CCCC;
       width: 300px;
       margin: 0 auto;
       background-color: #fff;
-
-      &--img{
-        width: 300px;
-        border: 10px solid $profile-leftColor;
-        border-radius: 50%;
-        object-fit: cover;
-      }
+      border: 10px solid $profile-leftColor;
+      border-radius: 50%;
+      background-position: center;
+      background-size: cover;
     }
+
 
     &__under{
       text-align: center;
@@ -94,26 +92,40 @@ $profile-leftColor: #00CCCC;
 
     &__introduction{
       margin-left: 10px;
-      height: 150px;
+      height: auto;
       color: $profile-textColor;
-      font-size: 16px;
+      font-size: 15px;
+      
+      p{
+        word-break: break-all;
+      }
     }
 
     &__url{
-      font-size: 16px;
-      margin-bottom: 8px;
+      font-size: 14px;
+      margin: 10px 0px;
 
       &--link{
         color: $profile-leftColor;
         text-decoration: none;
+        transition: color 0.2s;
+
+      &:hover{
+        color: #0000FF;
+      }
+      }
+
+      &--none{
+        display: inline-block;
+        color: $profile-textColor;
       }
     }
 
     &__tags{
-      font-size: 16px;
+      font-size: 12px;
       color: $profile-textColor;
       text-align: 24px;
-      height: 61px;
+      height: 55px;
 
       &--icon{
         margin: 5px 5px 0px 0px;
@@ -129,10 +141,91 @@ $profile-leftColor: #00CCCC;
         border-radius: 30px;
         padding: 0px 10px;
         float: left;
-        margin-bottom: 3px;
+        margin-bottom: 5px;
       }
     }
   }
+}
 
+// タブの作成
+
+.tabs {
+  padding-bottom: 10px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  margin: 0 auto;
+}
+
+.tab_item {
+  width: calc(100%/2);
+  height: 50px;
+  border-bottom: 3px solid $profile-leftColor;
+  background-color: #d9d9d9;
+  line-height: 50px;
+  font-size: 16px;
+  text-align: center;
+  color: #565656;
+  letter-spacing: 2px;
+  display: block;
+  float: left;
+  text-align: center;
+  font-weight: bold;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+.tab_item:hover {
+  opacity: 0.75;
+}
+
+input[name="tab_item"] {
+  display: none;
+}
+
+.tab_content {
+  display: none;
+  padding: 10px 10px 0;
+  clear: both;
+  overflow: hidden;
+}
+
+#mylog:checked ~ #mypost,
+#watch:checked ~ #watch_content {
+  display: block;
+}
+
+.tabs input:checked + .tab_item {
+  background-color: $profile-leftColor;
+  color: #fff;
+}
+
+// 自分の投稿一覧
+
+.PostBlock{
+  width: 100%;
+  height: auto;
+}
+
+.PostLink{
+  height: auto;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  text-decoration: none;
+  border-bottom: 1px solid #eee;
+
+  &__table{
+    display: flex;
+
+
+    &__left{
+      width: 110px;
+    }
+
+    &__right{
+      width: calc(100% - 110px);
+
+    }
+  }
 }
 

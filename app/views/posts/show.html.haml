@@ -1,0 +1,39 @@
+.main
+  .post-field
+    .upper
+      .upper__table
+        = link_to user_path(@post.user), class: 'upper__table__link' do
+          = image_tag @post.user.icon.to_s, class: 'upper__table__link--icon'
+          .upper-table__link--name
+            = @post.user.nickname
+      .upper__table
+        -# ドロップダウンメニューを作ります
+        - if user_signed_in? && current_user.id == @post.user_id
+          .dropdown
+            %input.dropInput{ type: "checkbox", id: "tg" }
+
+            %label.dropLabel{ for: "tg"}
+              = icon('fas', 'bars', class: "bars")
+            %ul.menu.animation
+              %li
+                = link_to "編集", edit_post_path(@post), class: "item"
+              %li
+                = link_to "削除", post_path, method: :delete, class: "item"
+
+    .under-table
+      .under-table__text
+        %p
+          = simple_format(@post.text)
+      - if @post.image.present?
+        = image_tag @post.image.to_s, class: 'under-table__image'
+      .under-table__date
+        = @post.created_at.strftime("%Y年%m月%d日 %H時%M分")
+      .under-table__tags
+        -# each文でuserに紐付いているtagをすべて表示
+        .profile__right__tags--name
+          -# tagsテーブル作ったら、紐付けをする。
+          プログラミング
+        .profile__right__tags--name
+          料理
+        .profile__right__tags--name
+          筋トレ

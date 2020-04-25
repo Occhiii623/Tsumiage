@@ -1,10 +1,9 @@
-.top-box
+.main
   .container
     .container__box
       .profile
         .profile__left
-          .profile__left__upper
-            = image_tag @icon.to_s, class: 'profile__left__upper--img'
+          .profile__left__upper{ style: "background-image: url(#{@icon.to_s})" }
           .profile__left__under
             = link_to "プロフィール編集", edit_user_registration_path, class: "profile__left__under--edit"
         .profile__right
@@ -15,10 +14,15 @@
           .profile__right__user-name
             = @nickname
           .profile__right__introduction
-            = @introduction
+            %p
+              = simple_format(@introduction)
           .profile__right__url
             = icon('fas', 'link')
-            = link_to "#{@URL}", @URL, class: "profile__right__url--link"
+            - unless @URL.blank?
+              = link_to "#{@URL}", @URL, class: "profile__right__url--link"
+            - else
+              %p.profile__right__url--none
+                ※URLはまだ設定されていません
           .profile__right__tags
             = icon('fas', 'tags', class: 'profile__right__tags--icon')
             -# each文でuserに紐付いているtagをすべて表示
@@ -29,7 +33,19 @@
               料理
             .profile__right__tags--name
               筋トレ
-            -# .profile__right__tags--name
-            -#   読書
-            -# .profile__right__tags--name
-            -#   美容
+            .profile__right__tags--name
+              読書
+            .profile__right__tags--name
+              美容
+      
+      .tabs
+        %input#mylog{ checked: "checked", name: "tab_item", type: "radio" }
+        %label.tab_item{ for: "mylog" } # MY LOG
+        %input#watch{ name: "tab_item", type: "radio" }
+        %label.tab_item{ for: "watch" } WATCH
+        #mypost.tab_content
+          .tab_content_description
+            = render "mypost"
+        #watch_content.tab_content
+          .tab_content_description
+            = render "watch"

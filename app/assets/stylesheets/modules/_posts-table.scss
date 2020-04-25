@@ -13,29 +13,45 @@
   flex-wrap: wrap;
 }
 
-.post{
+.link-table{
+  flex-grow: 1;
+  display: block;
   height: 260px;
   width: 280px;
   margin: 0 20px 20px 0;
+  text-decoration: none;
+}
+
+.post{
+  height: 100%;
+  width: 100%;
   background-color: #E6E6FA;
   background-size: cover;
+  background-position: center;
   padding: 10px;
-  flex-grow: 1;
+  transition:transform 0.3s;
+  border-radius: 15px;
+
+  &:hover{
+    transform:scale(1.1);
+  }
 
   &__upper{
     display: flex;
+    align-items: flex-start;
     margin-bottom: 10px;
 
     &__img{
       border-radius: 50%;
       object-fit: cover;
       width: 80px;
+      height: 80px;
       margin-right: 10px;
     }
 
     &__right{
       height: 80px;
-      width: 100%;
+      width: 90%;
       padding: 20px 0px 20px 10px;
       // 透過するための設定
       position: relative;
@@ -57,11 +73,11 @@
       }
 
       &--user-name{
-        font-size: 14px;
+        font-size: 15px;
       }
 
       &--date{
-        font-size: 11px;
+        font-size: 12px;
       }
     }
   }

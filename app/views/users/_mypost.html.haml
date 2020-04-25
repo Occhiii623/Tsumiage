@@ -1,0 +1,20 @@
+.PostsBlock
+  - @posts.each do |post|
+    = link_to post_path(post), class: "PostLink" do
+      .mypost__table
+        .mypost__table__left
+          = image_tag post.user.icon.to_s, class: 'post__upper__img'
+        .mypost__table__right
+          .mypost__table__right__
+
+
+
+        
+        -#   .post__upper__right
+        -#     .post__upper__right--user-name
+        -#       = post.user.nickname
+        -#     .post__upper__right--date
+        -#       = post.created_at.strftime("%Y年%m月%d日 %H時%M分")
+        -# .post__content
+        -#   %p
+        -#     = simple_format(post.text)
