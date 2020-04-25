@@ -16,9 +16,9 @@
               = icon('fas', 'bars', class: "bars")
             %ul.menu.animation
               %li
-                = link_to "編集", "#", class: "item"
+                = link_to "編集", edit_post_path(@post), class: "item"
               %li
-                = link_to "削除", "#", class: "item"
+                = link_to "削除", post_path, method: :delete, class: "item"
 
     .under-table
       .under-table__text

@@ -38,6 +38,7 @@
 
   &__upper{
     display: flex;
+    align-items: flex-start;
     margin-bottom: 10px;
 
     &__img{
@@ -50,7 +51,7 @@
 
     &__right{
       height: 80px;
-      width: 100%;
+      width: 90%;
       padding: 20px 0px 20px 10px;
       // 透過するための設定
       position: relative;

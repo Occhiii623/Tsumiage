@@ -38,5 +38,14 @@
             .profile__right__tags--name
               美容
       
-
-      .mypost
+      .tabs
+        %input#mylog{ checked: "checked", name: "tab_item", type: "radio" }
+        %label.tab_item{ for: "mylog" } # MY LOG
+        %input#watch{ name: "tab_item", type: "radio" }
+        %label.tab_item{ for: "watch" } WATCH
+        #mypost.tab_content
+          .tab_content_description
+            = render "mypost"
+        #watch_content.tab_content
+          .tab_content_description
+            = render "watch"

@@ -3,7 +3,7 @@ $profile-leftColor: #00CCCC;
 
 // showページのscss
 .container{
-  width: 70%;
+  width: 800px;
   height: 100%;
   background-color: #fff;
   margin: 0 auto;
@@ -147,7 +147,85 @@ $profile-leftColor: #00CCCC;
   }
 }
 
-.mypost{
+// タブの作成
+
+.tabs {
+  padding-bottom: 10px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   width: 100%;
-  height: 500px;
+  margin: 0 auto;
 }
+
+.tab_item {
+  width: calc(100%/2);
+  height: 50px;
+  border-bottom: 3px solid $profile-leftColor;
+  background-color: #d9d9d9;
+  line-height: 50px;
+  font-size: 16px;
+  text-align: center;
+  color: #565656;
+  letter-spacing: 2px;
+  display: block;
+  float: left;
+  text-align: center;
+  font-weight: bold;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+.tab_item:hover {
+  opacity: 0.75;
+}
+
+input[name="tab_item"] {
+  display: none;
+}
+
+.tab_content {
+  display: none;
+  padding: 10px 10px 0;
+  clear: both;
+  overflow: hidden;
+}
+
+#mylog:checked ~ #mypost,
+#watch:checked ~ #watch_content {
+  display: block;
+}
+
+.tabs input:checked + .tab_item {
+  background-color: $profile-leftColor;
+  color: #fff;
+}
+
+// 自分の投稿一覧
+
+.PostBlock{
+  width: 100%;
+  height: auto;
+}
+
+.PostLink{
+  height: auto;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  text-decoration: none;
+  border-bottom: 1px solid #eee;
+
+  &__table{
+    display: flex;
+
+
+    &__left{
+      width: 110px;
+    }
+
+    &__right{
+      width: calc(100% - 110px);
+
+    }
+  }
+}
+

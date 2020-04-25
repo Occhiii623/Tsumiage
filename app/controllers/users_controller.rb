@@ -3,6 +3,8 @@ class UsersController < ApplicationController
   def show
     # 該当ユーザーのデータを取得
     user = User.find(params[:id])
+    @posts = user.posts.order(created_at: :DESC)
+    
     @icon = user.icon
     @nickname = user.nickname
     @URL = user.URL
