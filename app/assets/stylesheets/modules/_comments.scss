@@ -1,0 +1,130 @@
+.comments{
+  width: 100%;
+  height: auto;
+  padding-top: 30px;
+}
+
+.mainBlock{
+  width: 60%;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.UpperBlock{
+  width: 100%;
+
+  &__title{
+    display: flex;
+    color: #000;
+    margin-bottom: 10px;
+
+    &--icon{
+      font-size: 20px;
+      margin: 3px 5px 0px 0px;
+    }
+
+    &--text{
+      font-size: 18px;
+      font-weight: bold;
+    }
+  }
+}
+
+.CommentArea{
+  width: 100%;
+  height: auto;
+  margin-bottom: 30px;
+
+  &__none{
+    color: #565656;
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  .comment{ 
+    display: flex;
+    padding: 15px 0px;
+    border-bottom: 1px solid #565656;
+
+  &__left{
+    width: 65px;
+
+    &--img{
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+    }
+  }
+
+  &__right{
+    width: calc(100% - 65px);
+    position: relative;
+
+    &__upper{
+      display: flex;
+      justify-content: space-between;
+      height: 30px;
+      line-height: 30px;
+      margin-bottom: 10px;
+      font-size: 13px;
+
+      &--name a{
+        color: #000;
+        text-decoration: none;
+        }
+
+      &--date{
+        color: #999;
+        margin-right: 30px;
+      }
+
+      &--text{
+        font-size: 14px;
+        margin-bottom: 20px;
+        }
+      }
+    }
+  }
+}
+
+.deleteIcon{
+  font-size: 13px;
+  color: #999;
+  position: absolute;
+  right: 6px;
+  top: 8px;
+  text-align: center;
+  cursor: pointer;
+  }
+
+.deleteBtn{
+  position: absolute;
+  top: 35px;
+  right: 10px;
+  text-decoration: none;
+  font-size: 12px;
+  border: 2px solid #ddd;
+  color: #565656;
+  background-color: #fff;
+  padding: 10px 20px;
+  border-radius: 4px;
+  display: none;
+  
+  &:hover{
+    background-color: #eee;
+  }
+}
+
+.CommentForm{
+  height: auto;
+  width: 100%;
+  text-align: center;
+
+  &__text{
+    width: 100%;
+    resize: none;
+    padding: 10px;
+    border-color: #565656;
+    margin-bottom: 10px;
+  }
+}
