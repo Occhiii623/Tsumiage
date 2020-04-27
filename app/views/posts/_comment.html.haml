@@ -23,6 +23,12 @@
                     = comment.user.nickname
                 .comment__right__upper--date
                   = comment.created_at.strftime("%Y年%m月%d日 %H時%M分")
+
+              - if user_signed_in? && current_user.id == comment.user.id
+                = icon('fas', 'ellipsis-h', class: "deleteIcon")
+                %p
+                = link_to "コメントを削除する", post_comment_path(@post, comment), method: :delete, class: "deleteBtn"
+
               .comment__right__upper--text
                 = simple_format(comment.text)
 
@@ -31,3 +37,4 @@
         = form_with(model: [@post, @comment], local: true) do |form|
           = form.text_area :text, placeholder: "コメントを入力", rows: 3, class: "CommentForm__text"
           = form.submit "投稿", class: "submit__btn"
+

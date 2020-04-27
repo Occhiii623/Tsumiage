@@ -58,6 +58,7 @@
 
   &__right{
     width: calc(100% - 65px);
+    position: relative;
 
     &__upper{
       display: flex;
@@ -74,6 +75,7 @@
 
       &--date{
         color: #999;
+        margin-right: 30px;
       }
 
       &--text{
@@ -85,6 +87,33 @@
   }
 }
 
+.deleteIcon{
+  font-size: 13px;
+  color: #999;
+  position: absolute;
+  right: 6px;
+  top: 8px;
+  text-align: center;
+  cursor: pointer;
+  }
+
+.deleteBtn{
+  position: absolute;
+  top: 35px;
+  right: 10px;
+  text-decoration: none;
+  font-size: 12px;
+  border: 2px solid #ddd;
+  color: #565656;
+  background-color: #fff;
+  padding: 10px 20px;
+  border-radius: 4px;
+  display: none;
+  
+  &:hover{
+    background-color: #eee;
+  }
+}
 
 .CommentForm{
   height: auto;
