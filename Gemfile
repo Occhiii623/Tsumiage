@@ -62,10 +62,11 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'haml-rails'
 gem 'font-awesome-sass'
-gem 'jquery-rails'
 gem 'devise'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'validate_url'
 gem 'kaminari'
 gem 'acts-as-taggable-on', '~> 6.0'
+gem "jquery-rails"
+gem 'rails-i18n'
