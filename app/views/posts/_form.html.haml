@@ -8,9 +8,8 @@
       .input-box__image
         = icon('fas', 'camera', class: 'input-box__image--icon')
         = form.file_field :image, class: "hidden"
-  -# tagsテーブルを導入したら、タグ検索機能を実装します
-  -# ↓↓↓↓
-  %input.input-box__search-tag{ placeholder: "積み上げたことに関連するタグを5つまで入力"}
+
+  = form.text_field :tag_list, value: @post.tag_list, placeholder: "積み上げたことに関連するタグをスペース区切りで5つまで入力", class: "input-box__search-tag"
 
 .submit
   = form.submit "Send", class: "submit__btn"
