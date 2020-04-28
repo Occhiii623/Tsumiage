@@ -34,7 +34,7 @@
 
     - if current_user
       .CommentForm
-        = form_with(model: [@post, @comment], local: true) do |form|
+        = form_with(model: [@post, @comment], local: true, id: "new-comment") do |form|
           = form.text_area :text, placeholder: "コメントを入力", rows: 3, class: "CommentForm__text"
           = form.submit "投稿", class: "submit__btn"
 
