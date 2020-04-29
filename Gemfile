@@ -70,3 +70,4 @@ gem 'kaminari'
 gem 'acts-as-taggable-on', '~> 6.0'
 gem "jquery-rails"
 gem 'rails-i18n'
+gem 'bootstrap-sass', '~> 3.3.7'

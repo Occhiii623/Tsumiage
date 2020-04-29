@@ -13,4 +13,5 @@
           .post__content
             %p
               = simple_format(post.text)
-  = paginate(@posts)  
+  .center-block
+    = paginate(@posts)  

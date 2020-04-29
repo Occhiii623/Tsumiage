@@ -9,7 +9,8 @@
         = icon('fas', 'camera', class: 'input-box__image--icon')
         = form.file_field :image, class: "hidden"
 
-  = form.text_field :tag_list, value: @post.tag_list, placeholder: "積み上げたことに関連するタグをスペース区切りで5つまで入力", class: "input-box__search-tag"
+  = form.label :tag_list, "積み上げたジャンル（カンマ(,)区切りで5つまで入力可）", class: "tag-label"
+  = text_field_tag 'post[tag_list]', @post.tag_list.join(","), "data-role" => "tagsinput", class: "input-box__search-tag", placeholder: "　　　　　　　　　　　　　　　　　　　　　"
 
 .submit
   = form.submit "Send", class: "submit__btn"
