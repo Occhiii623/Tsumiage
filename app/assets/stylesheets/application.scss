@@ -11,12 +11,10 @@
  * It is generally better to create a new file per style scope.
  *
  *= require bootstrap-tagsinput
- *= require_tree .
  *= require_self
  */
 
 @import "reset";
-@import "bootstrap-sprockets";
 @import "bootstrap";
 @import "config/colors";
 @import "font-awesome-sprockets";
@@ -30,3 +28,4 @@
 @import "modules/show-post";
 @import "modules/mypage";
 @import "modules/comments";
+@import 'bootstrap-tagsinput';

@@ -46,6 +46,10 @@ class PostsController < ApplicationController
     redirect_to root_path
   end
 
+  def typeahead_action
+    @tags = ActsAsTaggableOn::Tag.all
+    render json: @tags.where(@tags.arel_table[:name].matches("%#{params[:term]}%"))
+  end
 
   private
   def post_params

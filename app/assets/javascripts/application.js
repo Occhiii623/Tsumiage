@@ -17,5 +17,6 @@
 //= require turbolinks
 //= require bootstrap-tagsinput.min
 //= require_tree .
-// Bootstrap
+//= require jquery3
+//= require popper
 //= require bootstrap-sprockets
