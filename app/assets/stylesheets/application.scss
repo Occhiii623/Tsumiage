@@ -10,7 +10,7 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require bootstrap-tagsinput
+
  *= require_self
  */
 
@@ -29,3 +29,9 @@
 @import "modules/mypage";
 @import "modules/comments";
 @import 'bootstrap-tagsinput';
+@import 'tags';
+
+@font-face{
+  font-family: "marugothic";
+  src: font-url('mgenplus-1pp-light') format('truetype')
+}

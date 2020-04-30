@@ -1,0 +1,11 @@
+.main
+  .page-title
+    = icon("fas", "tag", class: 'page-title__icon')
+    .page-title__name
+      = @tag.name
+    .page-title__text
+      に関連した投稿
+
+  .tag-posts
+    .tag-posts__index
+      = render partial: "posts/post", collection: @posts

@@ -25,18 +25,25 @@
   }
 }
 
-.tags{
+.tags-box{
   width: 100%;
   height: calc(100% - 45px);
 }
 
-.tag{
+.tag-name{
   font-size: 13px;
-  height: 30px;
   background-color: #eee;
-  display: inline-block;
   padding: 5px;
   margin: 0 10px 10px 0;
-  float: left;
-  color: #555;
+  background: #000;
+  color: #fff;
+  transition: color 0.2s;
+  cursor: pointer;
+  border-radius: 5px;
+  display: block;
+
+  &:hover{
+    color: #00CCCC;
+    background-color: #333;
+  }
 }

@@ -1,0 +1,42 @@
+
+.page-title{
+  margin: 20px 0px 20px 40px;
+  font-size: 25px;
+  display: flex;
+  align-items: center;
+  height: 45px;
+  color: #565656;
+
+  &__icon{
+    line-height: 45px;
+    margin-right: 5px;
+  }
+
+  &__name{
+    font-size: 30px;
+  }
+
+  &__text{
+    display: block;
+    font-size: 20px;
+  }
+}
+
+.tag-posts{
+  width: 100%;
+
+  &__index{
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 2px 2px 6px gray;
+    padding: 20px 0px 20px 20px;
+    margin: 0 auto;
+    height: auto;
+    width: 95%;
+    overflow: scroll;
+    display: flex;
+    justify-content: center;
+    align-content: flex-start;
+    flex-wrap: wrap;
+  }
+}

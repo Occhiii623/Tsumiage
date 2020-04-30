@@ -2,7 +2,8 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit]
 
   def index
-    @posts = Post.includes(:user).order(created_at: :DESC).page(params[:page]).per(10)
+    @posts = Post.includes(:user, :tags).order(created_at: :DESC).page(params[:page]).per(10)
+    @tags = ActsAsTaggableOn::Tag.most_used(10)
   end
 
   def new
@@ -44,11 +45,6 @@ class PostsController < ApplicationController
     post.destroy
     flash[:notice] = "投稿内容を削除しました"
     redirect_to root_path
-  end
-
-  def typeahead_action
-    @tags = ActsAsTaggableOn::Tag.all
-    render json: @tags.where(@tags.arel_table[:name].matches("%#{params[:term]}%"))
   end
 
   private

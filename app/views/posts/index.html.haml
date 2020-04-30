@@ -1,7 +1,21 @@
 .main
   .contents
-    = render "posts-table"
-    = render "tags-table"
+    .post-container
+      .posts-table
+        = render partial: "post", collection: @posts
+    
+      .center-block
+        = paginate(@posts)  
 
-  .introduction
-    = render "introduction"
+    .tags-table
+      .form
+        %input.form__search-tag{type: "text", placeholder: "タグ検索"}
+        %button.form__submit{type: "submit"}
+          = icon('fas', 'search')
+      .tags-box
+        - @tags.each do |tag|
+          = link_to tag.name, tag_path(tag), class: 'tag-name'
+
+
+  -# .introduction
+  -#   = render "introduction"

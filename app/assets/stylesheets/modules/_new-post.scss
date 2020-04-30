@@ -4,29 +4,14 @@ $formColor: #bbb;
   display: block;
 }
 
-.bootstrap-tagsinput{
-  width: 100%;
-  height: 40px;
-}
-
-.bootstrap-tagsinput .tag {
-  background: #0099FF;
-  padding: 0 6px;
-  margin-right: 2px;
-  color: white;
-  border-radius: 4px;
-  height: 23px;
-  line-height: 23px;
-}
-
 .post-area{
   width: 60%;
-  height: 450px;
+  height: auto;
   background-color: #fff;
   margin: 60px auto 0px;
   max-width: 800px;
   border-radius: 15px;
-  padding: 10px;
+  padding: 10px 0px 20px;
   box-shadow: 2px 2px 6px gray;
 }
 
@@ -58,10 +43,6 @@ $formColor: #bbb;
       padding: 10px;
       resize: none;
       border-color: $formColor;
-      
-      &::placeholder {
-        color: $formColor;
-      }
     }
   }
 

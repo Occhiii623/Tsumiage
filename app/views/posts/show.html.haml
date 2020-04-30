@@ -29,7 +29,6 @@
       .under-table__date
         = @post.created_at.strftime("%Y年%m月%d日 %H時%M分")
       .under-table__tags
-        -# each文でuserに紐付いているtagをすべて表示
         - @post.tag_list.each do |tag|
           .profile__right__tags--name
             = tag
