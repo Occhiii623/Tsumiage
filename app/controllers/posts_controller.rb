@@ -23,6 +23,7 @@ class PostsController < ApplicationController
   def show
     @comment = Comment.new
     @comments = @post.comments.includes(:user)
+    @tags = @post.tags
   end
 
   def edit

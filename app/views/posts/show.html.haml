@@ -7,7 +7,6 @@
           .upper-table__link--name
             = @post.user.nickname
       .upper__table
-        -# ドロップダウンメニューを作ります
         - if user_signed_in? && current_user.id == @post.user_id
           .dropdown
             %input.dropInput{ type: "checkbox", id: "tg" }
@@ -29,8 +28,7 @@
       .under-table__date
         = @post.created_at.strftime("%Y年%m月%d日 %H時%M分")
       .under-table__tags
-        - @post.tag_list.each do |tag|
-          .profile__right__tags--name
-            = tag
+        - @tags.each do |tag|
+          = link_to tag, tag_path(tag), class: 'profile__right__tags--name'
 
   = render "comment"

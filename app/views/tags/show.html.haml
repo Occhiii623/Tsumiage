@@ -9,3 +9,5 @@
   .tag-posts
     .tag-posts__index
       = render partial: "posts/post", collection: @posts
+    .center-block
+      = paginate(@posts)  
