@@ -10,11 +10,12 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
+
  *= require_self
  */
 
 @import "reset";
+@import "bootstrap";
 @import "config/colors";
 @import "font-awesome-sprockets";
 @import "font-awesome";
@@ -27,3 +28,10 @@
 @import "modules/show-post";
 @import "modules/mypage";
 @import "modules/comments";
+@import 'bootstrap-tagsinput';
+@import 'tags';
+
+@font-face{
+  font-family: "marugothic";
+  src: font-url('mgenplus-1pp-light') format('truetype')
+}

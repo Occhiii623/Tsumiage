@@ -11,6 +11,11 @@ body{
   display: flex;
   flex-flow: column;
   min-height: 100vh;
+  font-family: 'marugothic';
+}
+
+a, a:hover,a:visited, a:focus {
+  text-decoration:none;
 }
 
 // ここから下はヘッダーの部分
@@ -34,6 +39,7 @@ body{
   &--logo{
     width: 230px;
     padding: 0px 10px;
+    padding-bottom: 25px;
   }
   }
 }

@@ -1,13 +1,17 @@
 $formColor: #bbb;
 
+.tag-label{
+  display: block;
+}
+
 .post-area{
   width: 60%;
-  height: 450px;
+  height: auto;
   background-color: #fff;
   margin: 60px auto 0px;
   max-width: 800px;
   border-radius: 15px;
-  padding: 10px;
+  padding: 10px 0px 20px;
   box-shadow: 2px 2px 6px gray;
 }
 
@@ -30,6 +34,7 @@ $formColor: #bbb;
   margin: 0 auto;
 
   &__text{
+    font-size: 16px;
     position: relative;
 
     &--input{
@@ -38,10 +43,6 @@ $formColor: #bbb;
       padding: 10px;
       resize: none;
       border-color: $formColor;
-      
-      &::placeholder {
-        color: $formColor;
-      }
     }
   }
 
@@ -65,7 +66,7 @@ $formColor: #bbb;
     line-height: 60px;
     position: absolute;
     right: 3px;
-    bottom: 3px;
+    bottom: 25px;
     color: $formColor;
     opacity: 0.5;
 

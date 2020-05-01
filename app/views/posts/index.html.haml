@@ -1,7 +1,39 @@
 .main
   .contents
-    = render "posts-table"
-    = render "tags-table"
+    .post-container
+      .posts-table
+        = render partial: "post", collection: @posts
+    
+      .center-block
+        = paginate(@posts)  
 
-  .introduction
-    = render "introduction"
+    -# 右側のタグテーブル
+    .tags-table
+      .form
+        %input.form__search-tag#keyword{type: "text", placeholder: "タグ検索"}
+      -# 検索結果の表示
+      #result
+        -# .search-noresult
+        -#   .search-noresult__tag-name
+        -#     該当するタグが見つかりません
+
+      -# 以下、人気タグ一覧
+      = icon('fas', 'fire-alt', class: 'tags-table__icon')
+      %p
+        人気タグ一覧
+      .tags-box
+        - @tags.each do |tag|
+          = link_to tag_path(tag), class: 'tag-name' do
+            .tag-name__view
+              = tag.name
+            .tag-name__count
+              %p
+                (
+                = tag.taggings_count
+              %p
+                )
+              
+
+
+  -# .introduction
+  -#   = render "introduction"

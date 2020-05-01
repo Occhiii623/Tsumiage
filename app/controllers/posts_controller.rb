@@ -2,7 +2,8 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit]
 
   def index
-    @posts = Post.includes(:user).order(created_at: :DESC).page(params[:page]).per(10)
+    @posts = Post.includes(:user, :tags).order(created_at: :DESC).page(params[:page]).per(10)
+    @tags = ActsAsTaggableOn::Tag.most_used(10)
   end
 
   def new
@@ -22,6 +23,7 @@ class PostsController < ApplicationController
   def show
     @comment = Comment.new
     @comments = @post.comments.includes(:user)
+    @tags = @post.tags
   end
 
   def edit
@@ -46,10 +48,9 @@ class PostsController < ApplicationController
     redirect_to root_path
   end
 
-
   private
   def post_params
-    params.require(:post).permit(:text, :image).merge(user_id: current_user.id)
+    params.require(:post).permit(:text, :image, :tag_list).merge(user_id: current_user.id)
   end
 
   def set_post

@@ -25,9 +25,8 @@ nav.pagination{
   background-color: #000;
   width: 200px;
   text-align: center;
-  padding: 8px;
+  padding: 8px 15px;
   a{
-    text-decoration: none;
     color: #fff;
   }
   
@@ -103,12 +102,8 @@ nav.pagination{
 
   &__content{
     padding: 3px 5px 3px 5px;
-    font-size: 13px;
+    font-size: 15px;
     height: 140;
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 7;
     color: #000;
     // 透過するための設定
     position: relative;
