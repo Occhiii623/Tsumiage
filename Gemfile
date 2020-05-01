@@ -70,5 +70,5 @@ gem 'kaminari'
 gem 'acts-as-taggable-on', '~> 6.0'
 gem "jquery-rails"
 gem 'rails-i18n'
-gem 'bootstrap', '~> 4.1.1'
+gem 'bootstrap', '~> 4.3.1'
 gem 'pry-rails'
