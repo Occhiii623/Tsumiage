@@ -1,5 +1,5 @@
 .tags-table{
-  height: 500px;
+  height: auto;
   width: 20%;
   background-color: #FF0066;
   border-radius: 15px;
@@ -18,23 +18,62 @@
 }
 
 .form{
-  display: flex;
   margin-bottom: 10px;
   height: 25px;
 
   &__search-tag{
-    width: 70%;
+    width: 95%;
     margin-right: 5px;
     font-size: 14px;
     padding: 0 5px;
   }
+}
 
-  &__submit{
-    width: 25%;
-    font-size: 14px;
-    cursor: pointer;
+// 検索結果表示のスタイル
+
+.search-noresult{
+  padding: 5px;
+  margin: 0 10px 10px 0;
+  background: #fff;
+  border-radius: 5px;
+  font-size: 16px;
+
+  &__tag-name{
+    color: #000;
   }
 }
+
+.search-result{
+  display: flex;
+  padding: 5px;
+  margin: 0 10px 10px 0;
+  background: #fff;
+  border-radius: 5px;
+  font-size: 16px;
+
+  &:hover{
+    background-color: #ddd;
+    cursor: pointer;
+  }
+
+  &__tag-name{
+    color: #000;
+    transition: color 0.2s;
+    margin-right: 10px;
+  }
+
+  &__count{
+    color: rgb(60, 19, 244);
+    padding: 0 4px;
+    font-size: 14px;
+  }
+}
+
+
+
+
+
+// ここまで
 
 .tags-box{
   width: 100%;
