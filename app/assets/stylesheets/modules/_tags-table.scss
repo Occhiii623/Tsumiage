@@ -1,15 +1,25 @@
 .tags-table{
-  height: 860px;
+  height: 500px;
   width: 20%;
   background-color: #FF0066;
   border-radius: 15px;
   box-shadow: 2px 2px 6px gray;
   padding: 20px 15px;
+
+  &__icon{
+    text-align: center;
+    color: wheat;
+    margin-bottom: 10px;
+  }
+
+  p{
+    display: inline;
+  }
 }
 
 .form{
   display: flex;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   height: 25px;
 
   &__search-tag{
@@ -22,6 +32,7 @@
   &__submit{
     width: 25%;
     font-size: 14px;
+    cursor: pointer;
   }
 }
 
@@ -31,19 +42,27 @@
 }
 
 .tag-name{
-  font-size: 13px;
-  background-color: #eee;
+  display: flex;
   padding: 5px;
   margin: 0 10px 10px 0;
   background: #000;
-  color: #fff;
-  transition: color 0.2s;
-  cursor: pointer;
   border-radius: 5px;
-  display: block;
+  font-size: 16px;
 
   &:hover{
-    color: #00CCCC;
-    background-color: #333;
+    background-color: #444;
+    cursor: pointer;
+  }
+
+  &__view{
+  color: #fff;
+  transition: color 0.2s;
+  margin-right: 10px;
+  }
+
+  &__count{
+    color: #fff;
+    padding: 0 4px;
+    font-size: 14px;
   }
 }

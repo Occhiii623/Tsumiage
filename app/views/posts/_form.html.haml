@@ -3,14 +3,14 @@
     = message
 .input-box
   .input-box__text
-    = form.text_area :text, placeholder: "今日の#TSUMIAGE", row: "10", id: "text", class: "input-box__text--input"
+    = form.text_area :text, placeholder: "今日#TSUMIAGEできたことはなんですか？", row: "10", id: "text", class: "input-box__text--input"
     = form.label :image do
       .input-box__image
         = icon('fas', 'camera', class: 'input-box__image--icon')
         = form.file_field :image, class: "hidden"
 
   = form.label :tag_list, "積み上げたジャンル（カンマ(,)区切りで5つまで入力可）", class: "tag-label"
-  = text_field_tag 'post[tag_list]', @post.tag_list, "data-role" => "tagsinput", class: "input-box__search-tag", placeholder: "　　　　　　　　　　　　　　　　　　　　　"
+  = text_field_tag 'post[tag_list]', @post.tag_list.join(','), "data-role" => "tagsinput", class: "input-box__search-tag", placeholder: "　　　　　　　　　　　　　　　　　　　　　"
 
 .submit
   = form.submit "Send", class: "submit__btn"

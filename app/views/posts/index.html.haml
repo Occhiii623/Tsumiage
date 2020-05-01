@@ -7,14 +7,31 @@
       .center-block
         = paginate(@posts)  
 
+    -# 右側のタグテーブル
     .tags-table
       .form
         %input.form__search-tag{type: "text", placeholder: "タグ検索"}
         %button.form__submit{type: "submit"}
           = icon('fas', 'search')
+      = icon('fas', 'fire-alt', class: 'tags-table__icon')
+      -# 検索結果の表示
+      
+
+      -# 以下、人気タグ一覧
+      %p
+        人気タグ一覧
       .tags-box
         - @tags.each do |tag|
-          = link_to tag.name, tag_path(tag), class: 'tag-name'
+          = link_to tag_path(tag), class: 'tag-name' do
+            .tag-name__view
+              = tag.name
+            .tag-name__count
+              %p
+                (
+                = tag.taggings_count
+              %p
+                )
+              
 
 
   -# .introduction
