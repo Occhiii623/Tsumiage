@@ -16,4 +16,5 @@
                 = simple_format(post.text)
             - if post.image.present?
               = icon('fas', 'image', class: "PostImage")
-  = paginate(@posts)
+  .pagination.justify-content-center
+    = paginate @posts, theme: 'twitter-bootstrap-4'

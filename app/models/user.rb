@@ -10,8 +10,6 @@ class User < ApplicationRecord
 
   has_many :posts
   has_many :comments
-  has_many :tag_users
-  has_many :tags, through: :tag_users
 
   has_many :relationships
   has_many :followings, through: :relationships, source: :follow
@@ -49,6 +47,5 @@ class User < ApplicationRecord
   def following?(other_user)
     self.followings.include?(other_user)
   end
-
 
 end

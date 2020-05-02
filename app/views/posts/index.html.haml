@@ -4,10 +4,9 @@
       .posts-table
         = render partial: "post", collection: @posts
     
-      .center-block
-        = paginate(@posts)  
+      .pagination.justify-content-center
+        = paginate @posts, theme: 'twitter-bootstrap-4'
 
-    -# 右側のタグテーブル
     .tags-table
       .form
         %input.form__search-tag#keyword{type: "text", placeholder: "タグ検索"}

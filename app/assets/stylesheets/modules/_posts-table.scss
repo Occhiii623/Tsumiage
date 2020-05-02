@@ -18,20 +18,6 @@
   flex-wrap: wrap;
 }
 
-nav.pagination{
-  color: #ccc;
-  margin: 0 auto;
-  border-radius: 10px;
-  background-color: #000;
-  width: 200px;
-  text-align: center;
-  padding: 8px 15px;
-  a{
-    color: #fff;
-  }
-  
-}
-
 .link-table{
   flex-grow: 1;
   display: block;
@@ -125,6 +111,6 @@ nav.pagination{
   }
 }
 
-
-
-
+.pagination{
+  text-align: center;
+}

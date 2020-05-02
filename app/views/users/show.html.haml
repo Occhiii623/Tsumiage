@@ -35,20 +35,20 @@
             - else
               %p.profile__right__url--none
                 ※URLはまだ設定されていません
-          .profile__right__tags
-            = icon('fas', 'tags', class: 'profile__right__tags--icon')
-            -# each文でuserに紐付いているtagをすべて表示
-            .profile__right__tags--name
-              -# tagsテーブル作ったら、紐付けをする。
-              プログラミング
-            .profile__right__tags--name
-              料理
-            .profile__right__tags--name
-              筋トレ
-            .profile__right__tags--name
-              読書
-            .profile__right__tags--name
-              美容
+          -# .profile__right__tags
+          -#   = icon('fas', 'tags', class: 'profile__right__tags--icon')
+          -#   -# each文でuserに紐付いているtagをすべて表示
+          -#   .profile__right__tags--name
+          -#     -# tagsテーブル作ったら、紐付けをする。
+          -#   -#   プログラミング
+          -#   -# .profile__right__tags--name
+          -#   -#   料理
+          -#   -# .profile__right__tags--name
+          -#   -#   筋トレ
+          -#   -# .profile__right__tags--name
+          -#   -#   読書
+          -#   -# .profile__right__tags--name
+          -#   -#   美容
       
       .tabs
         - if current_user.id == @user.id
