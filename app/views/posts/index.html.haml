@@ -13,11 +13,7 @@
         %input.form__search-tag#keyword{type: "text", placeholder: "タグ検索"}
       -# 検索結果の表示
       #result
-        -# .search-noresult
-        -#   .search-noresult__tag-name
-        -#     該当するタグが見つかりません
 
-      -# 以下、人気タグ一覧
       = icon('fas', 'fire-alt', class: 'tags-table__icon')
       %p
         人気タグ一覧
@@ -27,12 +23,9 @@
             .tag-name__view
               = tag.name
             .tag-name__count
-              %p
-                (
-                = tag.taggings_count
-              %p
-                )
-              
+              = tag.taggings_count
+            .tag-name__posts
+              posts
 
 
   -# .introduction

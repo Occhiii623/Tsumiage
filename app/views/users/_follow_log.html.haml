@@ -16,4 +16,5 @@
                 = simple_format(post.text)
             - if post.image.present?
               = icon('fas', 'image', class: "PostImage")
-  = paginate(@posts)
+  - if @posts.present?
+    = paginate(@posts)

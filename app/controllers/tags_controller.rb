@@ -1,7 +1,7 @@
 class TagsController < ApplicationController
   def index
     return nil if params[:keyword] == ""
-    @tags = ActsAsTaggableOn::Tag.where(['name LIKE ?', "%#{params[:keyword]}%"]).limit(10)
+    @tags = ActsAsTaggableOn::Tag.where(['name LIKE ?', "%#{params[:keyword]}%"]).limit(5)
     respond_to do |format|
       format.html
       format.json
