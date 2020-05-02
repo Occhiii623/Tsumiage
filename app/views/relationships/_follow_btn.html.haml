@@ -1,0 +1,8 @@
+- if current_user.following?(user)
+  = form_with(model: current_user.relationships.find_by(follow_id: user.id), method: :delete, local: true) do |f|
+    = f.hidden_field :follow_id, value: user.id
+    = f.submit 'フォローしています', class: "following-now"
+- else
+  = form_with(model: current_user.relationships.build, local: true) do |f|
+    = f.hidden_field :follow_id, value: user.id
+    = f.submit 'フォローする', class: "follows"

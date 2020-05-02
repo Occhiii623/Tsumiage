@@ -48,6 +48,7 @@ $(document).on("turbolinks:load", function(){
         $('.CommentArea').append(html);
         $('#comment_text').val('');
         $('.submit__btn').prop('disabled', false);
+        $('.CommentArea__none').remove();
       })
       .fail(function(){
         alert('コメント送信に失敗しました');
