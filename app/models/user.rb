@@ -10,6 +10,9 @@ class User < ApplicationRecord
 
   has_many :posts
   has_many :comments
+  has_many :tag_users
+  has_many :tags, through: :tag_users
+
   has_many :relationships
   has_many :followings, through: :relationships, source: :follow
   has_many :reverse_of_relationships, class_name: 'Relationship', foreign_key: 'follow_id'
