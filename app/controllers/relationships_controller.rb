@@ -12,7 +12,7 @@ class RelationshipsController < ApplicationController
       posts = Post.where(user_id: user.id)
       @posts.concat(posts)
       end
-      @posts.sort! { |a,b| a.created_at <=> b.created_at }
+      @posts.sort! { |a,b| b.created_at <=> a.created_at }
       @posts = Kaminari.paginate_array(@posts).page(params[:page]).per(10)
     end
   end
