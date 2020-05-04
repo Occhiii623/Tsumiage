@@ -10,6 +10,7 @@ $profile-leftColor: #00CCCC;
   box-shadow: 2px 2px 6px gray;
   border-radius: 15px;
   margin-top: 30px;
+  margin-bottom: 30px;
 
   &__box{
     height: 100%;
@@ -19,6 +20,7 @@ $profile-leftColor: #00CCCC;
 }
 
 .profile{
+  max-height: 400px;
   min-height: 400px;
   width: 100%;
   padding: 20px;
@@ -122,7 +124,7 @@ $profile-leftColor: #00CCCC;
       margin-left: 10px;
       height: auto;
       color: $profile-textColor;
-      font-size: 15px;
+      font-size: 17px;
       
       p{
         word-break: break-all;
@@ -250,7 +252,7 @@ $profile-leftColor: #00CCCC;
           color: $profile-leftColor;
         }
         &--date{
-          font-size: 12px;
+          font-size: 13px;
           color: #565656;
         }
       }

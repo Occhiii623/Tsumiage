@@ -67,6 +67,8 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'validate_url'
 gem 'kaminari'
+gem 'bootstrap4-kaminari-views'
+gem 'bootstrap_form'
 gem 'acts-as-taggable-on', '~> 6.0'
 gem "jquery-rails"
 gem 'rails-i18n'

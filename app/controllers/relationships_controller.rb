@@ -1,5 +1,6 @@
 class RelationshipsController < ApplicationController
   before_action :set_user, only: [:create, :destroy]
+  before_action :move_to_index
 
   def index
     # 今ログインしている人のユーザー情報を取得
@@ -8,10 +9,11 @@ class RelationshipsController < ApplicationController
     @posts = []
     if @users.present?
       @users.each do |user|
-      posts = Post.where(user_id: user.id).order(created_at: :DESC)
+      posts = Post.where(user_id: user.id)
       @posts.concat(posts)
-      @posts = Kaminari.paginate_array(@posts).page(params[:page]).per(10)
       end
+      @posts.sort! { |a,b| b.created_at <=> a.created_at }
+      @posts = Kaminari.paginate_array(@posts).page(params[:page]).per(10)
     end
   end
 
@@ -40,6 +42,13 @@ class RelationshipsController < ApplicationController
   private
   def set_user
     @user = User.find(params[:relationship][:follow_id])
+  end
+
+  def move_to_index
+    unless user_signed_in?
+      redirect_to root_path
+      flash[:alert] = "権限がありません"
+    end
   end
 
 end

@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit]
+  before_action :move_to_index, except: [:index, :show]
+  before_action :access_right_check, only: [:edit, :update, :destroy]
 
   def index
     @posts = Post.includes(:user, :tags).order(created_at: :DESC).page(params[:page]).per(10)
@@ -55,6 +57,19 @@ class PostsController < ApplicationController
 
   def set_post
     @post = Post.find(params[:id])
+  end
+
+  # ログインしていないユーザーはindex, show以外アクセスできない
+  def move_to_index
+    redirect_to action: :index unless user_signed_in?
+  end
+
+  def access_right_check
+    post = Post.find(params[:id])
+    if current_user.id != post.user_id
+      redirect_to action: :index
+      flash[:alert] = "権限がありません"
+    end
   end
 
 end
