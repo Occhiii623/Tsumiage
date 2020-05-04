@@ -12,7 +12,7 @@
                 = render 'relationships/follow_btn', user: @user
 
             -# フォロー人数＆フォローしてる人の投稿一覧リンク
-            - if current_user.id == @user.id
+            - if user_signed_in? && current_user.id == @user.id
               = link_to relationships_path, class: 'profile__left__under--follow' do
                 = icon('fas', 'star', class: "star-icon")
                 .profile__left__under--text
@@ -51,7 +51,7 @@
           -#   -#   美容
       
       .tabs
-        - if current_user.id == @user.id
+        - if user_signed_in? && current_user.id == @user.id
           .tab_item # MY LOG
         - else
           .tab_item # TSUMIAGE

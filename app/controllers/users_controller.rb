@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     @nickname = @user.nickname
     @URL = @user.URL
 
-    if @user[:introduction].nil?
+    if @user[:introduction].blank?
       @introduction = "※プロフィール文はまだ設定されていません"
     else
       @introduction = @user.introduction

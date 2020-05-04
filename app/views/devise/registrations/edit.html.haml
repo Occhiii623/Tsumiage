@@ -1,62 +1,66 @@
 .main
-  %h2.title
-    Edit #{resource_name.to_s.humanize}
-  = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
-    = render "devise/shared/error_messages", resource: resource
+  .center-container
+    %h2.title
+      Edit #{resource_name.to_s.humanize}
+    = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+      = render "devise/shared/error_messages", resource: resource
 
-    -# 名前を入力するフォームを追加
-    .field
-      = f.label :ニックネーム
-      %em (全角14文字まで)
-      %br/
-      = f.text_field :nickname, autofocus: true, maxlength: "28"
-
-    .field
-      = f.label :プロフィール文
-      %em (全角180文字まで)
-      %br/
-      = f.text_area :introduction, maxlength: "380", class: "edit-introduction"
-
-    .field
-      = f.label :プロフィール画像
-      %br/
-      = f.file_field :icon, class: "edit-icon"
+      -# 名前を入力するフォームを追加
+      .field
+        = f.label :ニックネーム
+        %em (最大6文字まで)
+        %br/
+        = f.text_field :nickname, autofocus: true, maxlength: "14"
 
       .field
-      = f.label :ウェブサイト
-      %br/
-      = f.text_field :URL, class: "edit-url"
-
-    .field
-      = f.label :email
-      %br/
-      = f.email_field :email, autocomplete: "email"
-    - if devise_mapping.confirmable? && resource.pending_reconfirmation?
-      %div
-        Currently waiting confirmation for: #{resource.unconfirmed_email}
-
-    .field
-      = f.label :password
-      %i (leave blank if you don't want to change it)
-      %br/
-      = f.password_field :password, autocomplete: "new-password"
-      - if @minimum_password_length
+        = f.label :プロフィール文
+        %em (最大180文字まで)
         %br/
-        %em
-          = @minimum_password_length
-          characters minimum
-    .field
-      = f.label :password_confirmation
-      %br/
-      = f.password_field :password_confirmation, autocomplete: "new-password"
-    -# .field
-    -#   = f.label :current_password
-    -#   %i (we need your current password to confirm your changes)
-    -#   %br/
-    -#   = f.password_field :current_password, autocomplete: "current-password"
-    .actions
-      = f.submit "Update"
-  %h3 Cancel my account
-  %p
-    Unhappy? #{button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete}
-  = link_to "Back", :back
+        = f.text_area :introduction, maxlength: "200", class: "edit-introduction"
+
+      .field
+        = f.label :プロフィール画像
+        %br/
+        = f.file_field :icon, class: "edit-icon"
+
+        .field
+        = f.label :ウェブサイト
+        %br/
+        = f.text_field :URL, class: "edit-url"
+
+      .field
+        = f.label :email
+        %br/
+        = f.email_field :email, autocomplete: "email"
+      - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+        %div
+          Currently waiting confirmation for: #{resource.unconfirmed_email}
+
+      .field
+        = f.label :password
+        %i (変更がなければ、空欄でも可)
+        %br/
+        = f.password_field :password, autocomplete: "new-password"
+        - if @minimum_password_length
+          %br/
+          %em
+            英数字
+            = @minimum_password_length
+            文字まで
+      .field
+        = f.label :password_confirmation
+        %br/
+        = f.password_field :password_confirmation, autocomplete: "new-password"
+      -# .field
+      -#   = f.label :current_password
+      -#   %i (we need your current password to confirm your changes)
+      -#   %br/
+      -#   = f.password_field :current_password, autocomplete: "current-password"
+      .actions
+        = f.submit "更新する"
+      %hr/
+    %h3 Cancel my account
+    %p
+      Unhappy?
+      #{button_to "退会する", registration_path(resource_name), data: { confirm: "本当によろしいですか？" }, method: :delete}
+    = link_to "Back", :back

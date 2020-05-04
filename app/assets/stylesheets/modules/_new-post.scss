@@ -34,11 +34,11 @@ $formColor: #bbb;
   margin: 0 auto;
 
   &__text{
-    font-size: 16px;
+    font-size: 18px;
     position: relative;
 
     &--input{
-      height: 10em;
+      height: 17em;
       width: 100%;
       padding: 10px;
       resize: none;
@@ -66,7 +66,7 @@ $formColor: #bbb;
     line-height: 60px;
     position: absolute;
     right: 3px;
-    bottom: 25px;
+    bottom: 30px;
     color: $formColor;
     opacity: 0.5;
 
