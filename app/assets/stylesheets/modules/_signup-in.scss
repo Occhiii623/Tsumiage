@@ -1,13 +1,186 @@
+// 新規登録画面
+
+.background-image{
+  width: 100%;
+  height: calc(100vh - 80px);
+  background-image: url("/images/background-signup.jpg");
+  background-size: cover;
+  padding: 40px;
+}
+
+.center-part{
+  height: auto;
+  max-width: 750px;
+  padding: 20px 0px 20px 10px;
+  margin: auto;
+  position: relative;
+  color: #000;
+  z-index: 0;
+  text-align: center;
+
+  &::before {
+    z-index: -1;
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    border-radius: 15px;
+    opacity:0.8;
+  }
+}
+
 .title{
   font-size: 30px;
 }
 
 .field{
   margin-bottom: 10px;
+
+  input{
+    height: 40px;
+    padding: 5px;
+  }
 }
 
 .edit-introduction{
   width: 300px;
   height: 8em;
   resize: none;
+}
+
+.actions input{
+    width: 200px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #fff;
+    border: 2px solid #00CCCC;
+    border-radius: 30px;
+    padding: 11px 15px;
+    background-color:#00CCCC;
+    transition: color 0.3s;
+    margin-top: 7px;
+    margin-bottom: 10px;
+
+    &:hover{
+      
+      color: #fff;
+      background-color: #00dbdb;
+      border-color: #00dbdb;
+      letter-spacing: 3px;
+    }
+}
+
+// エラーメッセージ
+#error_explanation{
+  color: #DC143C;
+}
+
+// サインイン画面
+
+.background-picture{
+  width: 100%;
+  height: calc(100vh - 80px);
+  background-image: url("/images/login-wallpaper.jpg");
+  background-size: cover;
+  padding: 40px 60px;
+  z-index: 0;
+}
+
+.middle-box{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.form-area{
+  height: auto;
+  min-width: 400px;
+  margin-right: 60px;
+  padding: 20px 0px 20px 10px;
+  position: relative;
+  color: #000;
+  z-index: 0;
+  text-align: center;
+
+  &::before {
+    z-index: -1;
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    border-radius: 15px;
+    opacity:0.8;
+  }
+}
+
+#remember{
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  
+  label{
+    line-height: 50px;
+  }
+}
+
+#user_remember_me{
+  margin-right: 10px;
+}
+
+.test-loginform{
+  background-color: #fff;
+  width: 400px;
+  margin-top: 40px;
+  text-align: center;
+  padding: 20px;
+  border-radius: 15px;
+
+  h5{
+    background-color: #000077;
+    color: #fff;
+  }
+
+  &__test{
+    font-size: 20px;
+
+    &--account{
+      color: #FF6347;
+    }
+  }
+}
+
+// .logo-message{
+//   position: absolute;
+//   top: 5;
+//   right: 4;
+// }
+
+// パスワードを忘れた場合に飛ぶページ
+
+.center-container{
+  height: auto;
+  max-width: 600px;
+  min-width: 500px;
+  padding: 20px 10px;
+  margin: auto;
+  color: #000;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: #fff;
+  border-radius: 15px;
+}
+
+// ユーザー情報編集画面
+
+#user_introduction{
+  height: 150px;
 }

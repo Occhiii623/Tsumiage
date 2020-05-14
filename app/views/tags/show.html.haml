@@ -9,5 +9,5 @@
   .tag-posts
     .tag-posts__index
       = render partial: "posts/post", collection: @posts
-    .center-block
-      = paginate(@posts)  
+    .pagination.justify-content-center
+      = paginate @posts, theme: 'twitter-bootstrap-4'

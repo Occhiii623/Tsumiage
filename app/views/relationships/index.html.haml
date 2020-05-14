@@ -1,0 +1,10 @@
+.main
+  .center-box
+    .tabs
+      .tab_item # FOLLOWING
+      #mypost.tab_content
+        .tab_content_description
+          = render "users/follow_log"
+  - if @posts.present?
+    .pagination.justify-content-center
+      = paginate @posts, theme: 'twitter-bootstrap-4'

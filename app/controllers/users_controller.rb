@@ -1,18 +1,18 @@
 class UsersController < ApplicationController
 
   def show
-
-    user = User.find(params[:id])
-    @posts = user.posts.order(created_at: :DESC).page(params[:page]).per(10)
+    @user = User.find(params[:id])
+    @posts = @user.posts.order(created_at: :DESC).page(params[:page]).per(10)
     
-    @icon = user.icon
-    @nickname = user.nickname
-    @URL = user.URL
+    @icon = @user.icon
+    @nickname = @user.nickname
+    @URL = @user.URL
 
-    if user[:introduction].nil?
+    if @user[:introduction].blank?
       @introduction = "※プロフィール文はまだ設定されていません"
     else
-      @introduction = user.introduction
+      @introduction = @user.introduction
     end
   end
+
 end
