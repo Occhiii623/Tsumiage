@@ -72,5 +72,5 @@ gem 'bootstrap_form'
 gem 'acts-as-taggable-on', '~> 6.0'
 gem "jquery-rails"
 gem 'rails-i18n'
-gem 'bootstrap'
+gem 'bootstrap', '~> 4.3.1'
 gem 'pry-rails'
