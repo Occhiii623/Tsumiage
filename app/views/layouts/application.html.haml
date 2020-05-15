@@ -20,8 +20,6 @@
             = link_to user_path(current_user.id), class: "right-box__content--user-name" do
               = current_user.nickname
           .right-box__content
-            = link_to "投稿する", new_post_path, class: "right-box__content--post", 'data-turbolinks': false
-          .right-box__content
             = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "right-box__content--logout"
       - else
         .right-box
