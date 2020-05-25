@@ -12,7 +12,7 @@
     .header
       .left-box
         = link_to root_path, class: "left-box__link" do
-          %img{ src: "/assets/logo.png", alt: "logo", class: "left-box__link--logo" }
+          = image_tag asset_path("logo.png"), alt: "logo", class: "left-box__link--logo"
       
       - if user_signed_in?
         .right-box-session
@@ -32,7 +32,7 @@
 
     .footer
       .footer__image
-        %img{ src: "/assets/logo-white.png", alt: "logo", class: "footer__image--logo" }
+        = image_tag asset_path("logo-white.png"), alt: "logo", class: "footer__image--logo"
       .footer__under
         .footer__under__link
           = link_to "作者について", "#"
