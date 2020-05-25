@@ -66,7 +66,7 @@ class PostsController < ApplicationController
 
   def access_right_check
     post = Post.find(params[:id])
-    if current_user.id != post.user_id
+    unless current_user.id == post.user_id
       redirect_to action: :index
       flash[:alert] = "権限がありません"
     end
