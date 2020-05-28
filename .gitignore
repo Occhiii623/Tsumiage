@@ -28,4 +28,3 @@
 public/uploads/*
 public/user_images/*
 .DS_Store
-config/credentials.yml.enc
