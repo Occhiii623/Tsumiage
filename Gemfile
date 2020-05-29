@@ -78,7 +78,7 @@ gem 'carrierwave'
 gem 'fog-aws'
 gem 'mini_magick'
 gem 'validate_url'
-gem 'kaminari'
+gem "kaminari", ">= 1.2.1"
 gem 'bootstrap4-kaminari-views'
 gem 'bootstrap_form'
 gem 'acts-as-taggable-on', '~> 6.0'
