@@ -6,9 +6,6 @@
 </p>
 
 ***
-## 🌐 App URL
-
-### **http://52.193.235.116/**  
 
 ## 💬 Description
 
@@ -66,3 +63,17 @@
   <a href="https://jquery.com/"><img src="https://user-images.githubusercontent.com/62282502/83244043-c6974900-a1d9-11ea-9aae-4f1380e60919.png" height="45px"></a>
   <a href="https://aws.amazon.com/jp/aws-jp-introduction/aws-jp-webinar-service-cut/"><img src="https://user-images.githubusercontent.com/62282502/83244460-5c32d880-a1da-11ea-87f6-e906d7ce16dc.png" height="45px"></a>
 </p>
+     
+## 🌐 App URL
+
+### **http://52.193.235.116/**  
+</br>
+
+## :scroll: E-R Diagram
+
+![Tsumiage](https://user-images.githubusercontent.com/62282502/83265464-839a9d00-a1fc-11ea-870d-a672d1da6597.jpeg)
+
+## :blush: Author
+
+- <a href="https://github.com/Occhiii623">Github</a></br>
+- <a href="https://twitter.com/jun_kagura623">Twitter</a> 
