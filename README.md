@@ -1,5 +1,5 @@
 <h2 align="center">
-成長記録サイト 『# Tsumiage』 </h3>
+:runner:成長記録サイト 『# Tsumiage』 </h3>
 
 <p align="center">
 <img src="https://user-images.githubusercontent.com/62282502/83223531-fa607780-a1b5-11ea-8a43-c8528fde2954.png" width="500px">
