@@ -14,7 +14,7 @@
 **「習慣づけたいことがあるけど（目標があるけど）、続かない・・・」**</br>
 そんな人に、自分の努力を記録してモチベーションを維持してほしいと思い作りました！
 
-- ツイッターのような文字制限を気にせず、日記感覚で投稿することができます。（300文字まで投稿可能）
+- ツイッターは140文字制限がありますが、300文字まで投稿することができます。
 - 積み上げているジャンルのタグをつけることができます。
 - タグで同じ分野で頑張る仲間を見つけやすくなります。
 - フォローした人の積み上げをタイムラインで追うことができます。
@@ -25,7 +25,8 @@
 <img src="https://user-images.githubusercontent.com/62282502/83234747-c1cb9880-a1cb-11ea-9ccf-adefd825d724.gif" width="500px">
 </p>
 
-1. ヘッダーの右上からログインできます（テストユーザーのIDとパスワードが記載されています）
+1. ヘッダーの右上からログインできます</br>
+   （テストユーザーのIDとパスワードが記載されていますので、よろしければそちらでログインください）
 2. ページ右下の「投稿する」ボタンから、投稿できます。
 3. 文章、画像(任意)、タグ(任意)を入力することで投稿完了です！
 4. トップページ一覧や、右上のマイページから投稿内容を確認できます。
@@ -51,6 +52,13 @@
 <img src="https://i.gyazo.com/fd1d97eca5fc94a92b11d220fa806a52.png" width="500px">
 </p>
 
+### 〜今後追加実装予定〜
+- 投稿内容への「いいね！」機能
+- 複数画像投稿＆プレビュー表示
+- 絵文字対応
+- 投稿内容の公開・非公開の選択機能
+- 「積み上げた数」に連動したレベルアップ＋称号機能
+
 ***
 <p align="center">
   <a href="https://guides.rubyonrails.org/"><img src="https://user-images.githubusercontent.com/62282502/83242911-1ecd4b80-a1d8-11ea-8914-931220dbbcb1.png")
@@ -63,7 +71,7 @@
   <a href="https://jquery.com/"><img src="https://user-images.githubusercontent.com/62282502/83244043-c6974900-a1d9-11ea-9aae-4f1380e60919.png" height="45px"></a>
   <a href="https://aws.amazon.com/jp/aws-jp-introduction/aws-jp-webinar-service-cut/"><img src="https://user-images.githubusercontent.com/62282502/83244460-5c32d880-a1da-11ea-87f6-e906d7ce16dc.png" height="45px"></a>
 </p>
-     
+          
 ## 🌐 App URL
 
 ### **http://52.193.235.116/**  
