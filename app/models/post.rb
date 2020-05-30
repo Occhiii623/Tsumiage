@@ -7,7 +7,7 @@ class Post < ApplicationRecord
 
   validate :tag_list_count
   validate :tag_character_length
-  validates :text, presence: true, length: { maximum: 200 }
+  validates :text, presence: true, length: { maximum: 300 }
   mount_uploader :image, ImageUploader
 
   private
