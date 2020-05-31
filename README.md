@@ -74,7 +74,7 @@
           
 ## 🌐 App URL
 
-### **http://52.193.235.116/**  
+### **https://www.tsumiage.site/**  
 </br>
 
 ## :scroll: E-R Diagram
