@@ -77,6 +77,11 @@
 ### **https://www.tsumiage.site/**  
 </br>
 
+## :cloud: Infrastructure Configuration Diagram
+<p align="center">
+<img src="https://user-images.githubusercontent.com/62282502/83608952-87da0800-a5b8-11ea-8b28-ba8f060add9e.jpg" width="600px">
+</p>
+
 ## :scroll: E-R Diagram
 
 ![Tsumiage](https://user-images.githubusercontent.com/62282502/83265464-839a9d00-a1fc-11ea-870d-a672d1da6597.jpeg)
