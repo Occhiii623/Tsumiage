@@ -33,11 +33,11 @@
 
 <h3 align="center">- フォローする -</h3>
 <p align="center">
-<img src="https://user-images.githubusercontent.com/62282502/83238821-f2163580-a1d1-11ea-9608-ce47073fa4cd.gif" width="500px">
+<img src="https://user-images.githubusercontent.com/62282502/83768745-21d5a980-a6ba-11ea-825f-d090c9cb561b.gif" width="500px">
 </p>
 
-1. 投稿記事のアイコンをクリックすると、そのユーザーのページに飛びます。
-2. フォローすると、自分のマイページの『:star:フォローしている人数』から</br>
+1. 投稿している人のアイコンをクリックすると、そのユーザーのページに飛びます。
+2. フォローすると、自分のマイページの「フォロー中」をクリックすると</br>
    フォローした人の投稿タイムラインを見ることができます。
    
 <h3 align="center">- コメントをつける -</h3>
@@ -52,8 +52,15 @@
 <img src="https://i.gyazo.com/fd1d97eca5fc94a92b11d220fa806a52.png" width="500px">
 </p>
 
+<h3 align="center">- 「いいね！」する -</h3>
+<p align="center">
+<img src="https://user-images.githubusercontent.com/62282502/83767902-23eb3880-a6b9-11ea-8992-b055b39d99ad.gif" width="500px">
+</p>
+
+1. 投稿の詳細ページから、「いいね！」をつけられます。
+2. マイページから、「いいね！」をつけた投稿一覧を確認できます。
+
 ### 〜今後追加実装予定〜
-- 投稿内容への「いいね！」機能
 - 複数画像投稿＆プレビュー表示
 - 絵文字対応
 - 投稿内容の公開・非公開の選択機能
@@ -84,7 +91,7 @@
 
 ## :scroll: E-R Diagram
 
-![Tsumiage](https://user-images.githubusercontent.com/62282502/83265464-839a9d00-a1fc-11ea-870d-a672d1da6597.jpeg)
+![Tsumiage](https://user-images.githubusercontent.com/62282502/83767044-184b4200-a6b8-11ea-8462-2301efe000e1.jpeg)
 
 ## :blush: Author
 
