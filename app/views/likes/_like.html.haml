@@ -1,0 +1,10 @@
+- if current_user.already_liked?(@post)
+  = link_to post_like_path(@post, @like), class: "alreadyLiked", method: :delete, remote: true do
+    %span{class: "fa fa-heart like-btn-unlike"}
+    %span いいね！
+    %span{class: "likes-count"}= @post.likes.count
+- else
+  = link_to post_likes_path(@post), class: "notLike", method: :post, remote: true do
+    %span{class: "far fa-heart like-btn"}
+    %span いいね！
+    %span{class: "likes-count"}= @post.likes.count

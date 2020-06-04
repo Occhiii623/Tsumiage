@@ -1,0 +1,11 @@
+@mixin like-btn($color: tomato){
+  padding: 5px 10px;
+  border-radius: 30px;
+  font-size: 15px;
+  font-weight: 600;
+  color: $color;
+
+  &:hover{
+    color: $color;
+  }
+}

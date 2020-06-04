@@ -21,8 +21,7 @@
 
     .under-table
       .under-table__text
-        %p
-          = simple_format(@post.text)
+        %p= simple_format(@post.text)
       - if @post.image.present?
         = image_tag @post.image.to_s, class: 'under-table__image'
       .under-table__box

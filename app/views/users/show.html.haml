@@ -11,13 +11,20 @@
               - if user_signed_in?
                 = render 'relationships/follow_btn', user: @user
 
-            -# フォロー人数＆フォローしてる人の投稿一覧リンク
             - if user_signed_in? && current_user.id == @user.id
-              = link_to relationships_path, class: 'profile__left__under--follow' do
-                = icon('fas', 'star', class: "star-icon")
-                .profile__left__under--text
-                  %span フォローしている人数：
-                = @user.followings.count
+              .profile__left__underLink
+                -# フォロー人数＆フォローしてる人の投稿一覧リンク
+                = link_to relationships_path, class: 'profile__left__underLink--follow' do
+                  = icon('fas', 'star', class: "star-icon")
+                  = @user.followings.count
+                  %span フォロー中
+                  
+                -# いいねした投稿一覧へのリンク
+                = link_to likes_path, class: 'profile__left__underLink--like' do
+                  = icon('fas', 'heart', class: "heart-icon")
+                  %span いいね！
+
+
         .profile__right
           .profile__right__title
             = icon('fas', 'user-circle', class: "profile__right__title--icon")
@@ -58,3 +65,12 @@
         #mypost.tab_content
           .tab_content_description
             = render "mypost"
+  
+    .pagination.justify-content-center
+      = paginate @posts, theme: 'twitter-bootstrap-4'
+  
+  - if user_signed_in?
+    = link_to new_post_path, 'data-turbolinks': false, class: "post-btn" do
+      .post-btn__text
+        投稿する
+        = icon('fas', 'pencil-alt', class: "post-icon")
