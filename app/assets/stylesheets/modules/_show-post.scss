@@ -1,4 +1,3 @@
-
 .post-field{
   width: 60%;
   height: auto;
@@ -116,6 +115,13 @@
     border-radius: 30px;
   }
 
+  &__box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+  }
+
   &__date{
     margin: 10px;
     color: #bbb;
@@ -127,4 +133,22 @@
     height: 50px;
     font-size: 15px;
   }
+}
+
+.fa-heart{
+  margin-right: 2px;
+}
+
+.likes-count{
+  margin-right: 10px;
+}
+
+.alreadyLiked{
+  @include like-btn();
+  border: 2px solid tomato;
+}
+
+.notLike{
+  @include like-btn(rgb(62, 62, 62));
+  background-color: rgb(235, 235, 235);
 }

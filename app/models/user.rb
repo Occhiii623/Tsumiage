@@ -14,6 +14,8 @@ class User < ApplicationRecord
   has_many :followings, through: :relationships, source: :follow
   has_many :reverse_of_relationships, class_name: 'Relationship', foreign_key: 'follow_id'
   has_many :followers, through: :reverse_of_relationships, source: :user
+  has_many :likes, dependent: :destroy
+  has_many :liked_posts, through: :likes, source: :post
 
   mount_uploader :icon, IconUploader
 
@@ -47,4 +49,8 @@ class User < ApplicationRecord
     self.followings.include?(other_user)
   end
 
+  # ユーザーがすでに対象の投稿にいいねしているか判定
+  def already_liked?(post)
+    self.likes.exists?(post_id: post.id)
+  end
 end

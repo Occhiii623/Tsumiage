@@ -2,15 +2,15 @@
   .center-box
     .tabs
       .tab_item
-        %i{class: "fas fa-star"}
-        %span フォロー中
+        %i{class: "fas fa-heart"}
+        %span いいね！
       #mypost.tab_content
         .tab_content_description
           - if @posts.present?
             = render "users/mypost"
           - else
             .tab_inner
-              = image_tag asset_path('no-followings.png'), alt: "no_followings_yet", class: "tab_inner__followingImage"
+              = image_tag asset_path('no-likes.png'), alt: "no_likes_yet", class: "tab_inner__likeImage"
   - if @posts.present?
     .pagination.justify-content-center
       = paginate @posts, theme: 'twitter-bootstrap-4'

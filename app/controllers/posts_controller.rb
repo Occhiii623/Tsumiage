@@ -26,6 +26,10 @@ class PostsController < ApplicationController
     @comment = Comment.new
     @comments = @post.comments.includes(:user)
     @tags = @post.tags
+    @like = Like.new
+    if current_user.already_liked?(@post)
+      @like = Like.find_by(post_id: @post.id, user_id: current_user.id)
+    end
   end
 
   def edit

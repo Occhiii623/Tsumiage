@@ -4,8 +4,7 @@ class RelationshipsController < ApplicationController
 
   def index
     # 今ログインしている人のユーザー情報を取得
-    @user = current_user
-    @users = @user.followings
+    @users = current_user.followings
     @posts = []
     if @users.present?
       @users.each do |user|
