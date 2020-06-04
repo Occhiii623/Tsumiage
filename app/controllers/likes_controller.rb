@@ -1,13 +1,22 @@
 class LikesController < ApplicationController
+  before_action :set_post, only: [:create, :destroy]
+
+  def index
+    @posts = current_user.liked_posts.order(created_at: :DESC)
+    @posts = Kaminari.paginate_array(@posts).page(params[:page]).per(10)
+  end
+
   def create
-    # 現在ログインしているユーザーがlikeを作る
-    @post = Post.find(params[:post_id])
     @like = current_user.likes.create(post_id: params[:post_id])
   end
 
   def destroy
-    @post = Post.find(params[:post_id])
     @like = Like.find_by(post_id: params[:post_id], user_id: current_user.id)
     @like.destroy
+  end
+
+  private
+  def set_post
+    @post = Post.find(params[:post_id])
   end
 end

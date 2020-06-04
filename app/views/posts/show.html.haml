@@ -27,7 +27,7 @@
       .under-table__box
         .under-table__date
           = @post.created_at.strftime("%Y年%m月%d日 %H時%M分")
-        .unde-table__like{id: "likes_buttons_content"}
+        .under-table__like{id: "likes_buttons_content"}
           = render partial: 'likes/like', locals: { post: @post, like: @like}
       .under-table__tags
         - @tags.each do |tag|
