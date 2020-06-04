@@ -127,4 +127,29 @@
     height: 50px;
     font-size: 15px;
   }
+
+  &__like{
+    &__count{
+      @include like-btn(rgb(62, 62, 62));
+      background-color: rgb(235, 235, 235);
+    }
+  }
+}
+
+.fa-heart{
+  margin-right: 2px;
+}
+
+.likes-count{
+  margin-right: 10px;
+}
+
+.alreadyLiked{
+  @include like-btn();
+  border: 2px solid tomato;
+}
+
+.notLike{
+  @include like-btn(rgb(62, 62, 62));
+  background-color: rgb(235, 235, 235);
 }

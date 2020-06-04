@@ -25,8 +25,17 @@
           = simple_format(@post.text)
       - if @post.image.present?
         = image_tag @post.image.to_s, class: 'under-table__image'
-      .under-table__date
-        = @post.created_at.strftime("%Y年%m月%d日 %H時%M分")
+      .under-table__box
+        .under-table__date
+          = @post.created_at.strftime("%Y年%m月%d日 %H時%M分")
+        .under-table__like{id: "likes_buttons_content"}
+          - if user_signed_in?
+            = render partial: 'likes/like', locals: { post: @post, like: @like}
+          - else
+            .under-table__like__count
+              %span{class: "far fa-heart like-btn"}
+              %span いいね！
+              %span{class: "likes-count"}= @post.likes.count
       .under-table__tags
         - @tags.each do |tag|
           = link_to tag, tag_path(tag), class: 'profile__right__tags--name'
