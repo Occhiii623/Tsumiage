@@ -6,7 +6,11 @@
         %span フォロー中
       #mypost.tab_content
         .tab_content_description
-          = render "users/mypost"
+          - if @posts.present?
+            = render "users/mypost"
+          - else
+            .tab_inner
+              = image_tag asset_path('no-followings.png'), alt: "no_followings_yet", class: "tab_inner__followingImage"
   - if @posts.present?
     .pagination.justify-content-center
       = paginate @posts, theme: 'twitter-bootstrap-4'
