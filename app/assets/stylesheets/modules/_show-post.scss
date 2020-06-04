@@ -116,6 +116,12 @@
     border-radius: 30px;
   }
 
+  &__box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
   &__date{
     margin: 10px;
     color: #bbb;
@@ -127,4 +133,16 @@
     height: 50px;
     font-size: 15px;
   }
+}
+
+.fa-heart{
+  margin-right: 5px;
+  font-size: 25px;
+  color: tomato;
+}
+
+.likes-count{
+  font-size: 25px;
+  margin-right: 10px;
+  color: #000;
 }

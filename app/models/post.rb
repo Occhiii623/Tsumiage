@@ -5,7 +5,7 @@ class Post < ApplicationRecord
   belongs_to :user
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
-  has_many :liked_users, through: :likes, :user
+  has_many :liked_users, through: :likes, source: :user
 
   validate :tag_list_count
   validate :tag_character_length

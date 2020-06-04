@@ -58,3 +58,9 @@
         #mypost.tab_content
           .tab_content_description
             = render "mypost"
+  
+  - if user_signed_in?
+    = link_to new_post_path, 'data-turbolinks': false, class: "post-btn" do
+      .post-btn__text
+        投稿する
+        = icon('fas', 'pencil-alt', class: "post-icon")
