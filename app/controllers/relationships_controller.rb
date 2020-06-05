@@ -1,6 +1,6 @@
 class RelationshipsController < ApplicationController
   before_action :set_user, only: [:create, :destroy]
-  before_action :move_to_index
+  before_action :authenticate_user!, only: [:index]
 
   def index
     # 今ログインしている人のユーザー情報を取得
@@ -41,13 +41,6 @@ class RelationshipsController < ApplicationController
   private
   def set_user
     @user = User.find(params[:relationship][:follow_id])
-  end
-
-  def move_to_index
-    unless user_signed_in?
-      redirect_to root_path
-      flash[:alert] = "権限がありません"
-    end
   end
 
 end

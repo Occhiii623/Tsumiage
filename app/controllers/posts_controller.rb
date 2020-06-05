@@ -1,11 +1,10 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit]
-  before_action :move_to_index, except: [:index, :show]
   before_action :access_right_check, only: [:edit, :update, :destroy]
 
   def index
     @posts = Post.includes(:user, :tags).order(created_at: :DESC).page(params[:page]).per(10)
-    @tags = ActsAsTaggableOn::Tag.most_used(10)
+    @tags = ActsAsTaggableOn::Tag.most_used(15)
   end
 
   def new
@@ -15,8 +14,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.create(post_params)
     if @post.save
-      flash[:notice] = '投稿を作成しました'
-      redirect_to root_path
+      redirect_to root_path, notice: "投稿を作成しました"
     else
       render :new
     end
@@ -32,6 +30,11 @@ class PostsController < ApplicationController
     end
   end
 
+  def search
+    @posts = Post.search(params[:keyword]).order(created_at: :DESC)
+    @posts = Kaminari.paginate_array(@posts).page(params[:page]).per(10)
+  end
+
   def edit
   end
 
@@ -40,8 +43,7 @@ class PostsController < ApplicationController
     @post.update(post_params)
 
     if @post.save
-      flash[:notice] = "投稿内容を編集しました"
-      redirect_to post_path
+      redirect_to post_path, notice: "投稿内容を編集しました"
     else
       render :edit
     end
@@ -50,8 +52,7 @@ class PostsController < ApplicationController
   def destroy
     post = Post.find(params[:id])
     post.destroy
-    flash[:notice] = "投稿内容を削除しました"
-    redirect_to root_path
+    redirect_to root_path, notice: "投稿内容を削除しました"
   end
 
   private
@@ -61,11 +62,6 @@ class PostsController < ApplicationController
 
   def set_post
     @post = Post.find(params[:id])
-  end
-
-  # ログインしていないユーザーはindex, show以外アクセスできない
-  def move_to_index
-    redirect_to action: :index unless user_signed_in?
   end
 
   def access_right_check

@@ -14,19 +14,25 @@
         = link_to root_path, class: "left-box__link" do
           = image_tag asset_path("logo.png"), alt: "logo", class: "left-box__link--logo"
       
-      - if user_signed_in?
-        .right-box-session
-          .right-box__content
-            = link_to user_path(current_user.id), class: "right-box__content--user-name" do
-              = current_user.nickname
-          .right-box__content
-            = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "right-box__content--logout"
-      - else
-        .right-box
-          .right-box__content
-            = link_to "新規登録", new_user_registration_path, class: "right-box__content--signup"
-          .right-box__content
-            = link_to "ログイン", new_user_session_path, class: "right-box__content--signin"
+      .right-box-session
+        = form_with(url: search_posts_path, local: true, method: :get, class: "right-box-session__searchForm") do |f|
+          = f.text_field :keyword, placeholder: "投稿を検索する", class: "right-box-session__searchForm__input", id: "keyword-post"
+          = button_tag type: 'submit', class: "btn btn-primary" do
+            %i.fas.fa-search
+      
+        - if user_signed_in?
+          .right-box
+            .right-box__content
+              = link_to user_path(current_user.id), class: "right-box__content--user-name" do
+                = current_user.nickname
+            .right-box__content
+              = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "right-box__content--logout"
+        - else
+          .right-box
+            .right-box__content
+              = link_to "新規登録", new_user_registration_path, class: "right-box__content--signup"
+            .right-box__content
+              = link_to "ログイン", new_user_session_path, class: "right-box__content--signin"
     = render 'layouts/notification'
     = yield
 
@@ -35,8 +41,8 @@
         = image_tag asset_path("logo-white.png"), alt: "logo", class: "footer__image--logo"
       .footer__under
         .footer__under__link
-          = link_to "作者について", "#"
+          = link_to "作者について", "https://occhiii623.github.io/portfolio/", target: :_blank
         .footer__under__link
           |
         .footer__under__link
-          = link_to "お問い合わせ", "#"
+          = link_to "お問い合わせ", "https://forms.gle/2HWwMNL7coXr84Td7", target: :_blank

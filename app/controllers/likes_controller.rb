@@ -1,5 +1,6 @@
 class LikesController < ApplicationController
   before_action :set_post, only: [:create, :destroy]
+  before_action :authenticate_user!, only: [:index]
 
   def index
     @posts = current_user.liked_posts.order(created_at: :DESC)
@@ -19,4 +20,5 @@ class LikesController < ApplicationController
   def set_post
     @post = Post.find(params[:post_id])
   end
+
 end

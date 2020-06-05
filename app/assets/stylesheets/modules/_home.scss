@@ -39,6 +39,38 @@ a, a:hover,a:visited, a:focus {
   }
 }
 
+.right-box-session{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+
+  &__searchForm{
+    margin-left: 20px;
+    width: 50%;
+
+    &__input{
+      min-width: 240px;
+      font: 15px/24px;
+      box-sizing: border-box;
+      width: 80%;
+      padding: 0.3em;
+      transition: 0.3s;
+      letter-spacing: 1px;
+      color: #383737;
+      border: 1px solid #1b2538;
+      border-radius: 4px;
+      float: left;
+
+      &:focus{
+        border: 1px solid #da3c41;
+        outline: none;
+        box-shadow: 0 0 5px 1px rgba(218,60,65, .5);
+      }
+    }
+  }
+}
+
 .right-box{
   height: 80px;
   width: 200px;
