@@ -37,7 +37,7 @@
 </p>
 
 1. 投稿している人のアイコンをクリックすると、そのユーザーのページに飛びます。
-2. フォローすると、自分のマイページの「フォロー中」をクリックすると</br>
+2. フォローして自分のマイページの「フォロー中」をクリックすると</br>
    フォローした人の投稿タイムラインを見ることができます。
    
 <h3 align="center">- コメントをつける -</h3>
@@ -52,7 +52,7 @@
 <img src="https://i.gyazo.com/fd1d97eca5fc94a92b11d220fa806a52.png" width="500px">
 </p>
 
-<h3 align="center">- 「いいね！」する -</h3>
+<h3 align="center">- 「いいね！」をつける -</h3>
 <p align="center">
 <img src="https://user-images.githubusercontent.com/62282502/83767902-23eb3880-a6b9-11ea-8992-b055b39d99ad.gif" width="500px">
 </p>
