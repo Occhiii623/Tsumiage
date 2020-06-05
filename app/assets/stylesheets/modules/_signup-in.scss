@@ -50,6 +50,7 @@
   width: 300px;
   height: 8em;
   resize: none;
+  padding: 8px;
 }
 
 .actions input{
@@ -57,10 +58,10 @@
     cursor: pointer;
     text-decoration: none;
     color: #fff;
-    border: 2px solid #00CCCC;
+    border: 2px solid $cyan;
     border-radius: 30px;
     padding: 11px 15px;
-    background-color:#00CCCC;
+    background-color:$cyan;
     transition: color 0.3s;
     margin-top: 7px;
     margin-bottom: 10px;
@@ -68,8 +69,8 @@
     &:hover{
       
       color: #fff;
-      background-color: #00dbdb;
-      border-color: #00dbdb;
+      background-color:$cyan;
+      border-color: $cyan;
       letter-spacing: 3px;
     }
 }

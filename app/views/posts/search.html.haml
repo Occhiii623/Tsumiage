@@ -1,0 +1,15 @@
+.main
+  .contents
+    .post-container-searchResult
+      -if params[:keyword].blank?
+        %h3 『全て』の検索結果
+      - else
+        %h3 『#{params[:keyword]}』の検索結果
+      .posts-table
+        - if @posts.present?
+          = render partial: "post", collection: @posts
+        - else
+          = image_tag asset_path('post-notfound.png'), class: "notFound"
+    
+      .pagination.justify-content-center
+        = paginate @posts, theme: 'twitter-bootstrap-4'

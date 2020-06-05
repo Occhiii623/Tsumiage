@@ -62,7 +62,7 @@
     }
 
     .item:hover {
-      background-color: #00CCCC;
+      background-color: $cyan;
       color: #fff;
     }
 
@@ -88,7 +88,7 @@
         height:90px;
         object-fit: cover;
         border-radius: 50%;
-        border: 3px solid #00CCCC;
+        border: 3px solid $cyan;
         margin-right: 10px;
       }
     

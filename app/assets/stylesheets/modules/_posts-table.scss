@@ -1,11 +1,17 @@
 .post-container{
-  height: auto;
-  width: 80%;
-  background-color: #fff;
-  border-radius: 15px;
-  margin-right: 20px;
-  box-shadow: 2px 2px 6px gray;
-  padding: 20px 0px 20px 20px;
+  @include post-table();
+}
+
+.post-container-searchResult{
+  @include post-table(100%);
+
+  h3{
+    margin: 0px 20px 20px 0px;
+    padding: 10px;
+    background-color: $cyan;
+    border-radius: 10px;
+    color: $white;
+  }
 }
 
 .posts-table{
@@ -113,4 +119,9 @@
 
 .pagination{
   text-align: center;
+}
+
+.notFound{
+  width: 400px;
+  margin: 40px 0 80px;
 }
