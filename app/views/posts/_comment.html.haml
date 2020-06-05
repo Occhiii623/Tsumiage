@@ -32,9 +32,20 @@
               .comment__right__upper--text
                 = simple_format(comment.text)
 
-    - if current_user
+    - if user_signed_in?
       .CommentForm
         = form_with(model: [@post, @comment], local: true, id: "new-comment") do |form|
           = form.text_area :text, placeholder: "コメントを入力", rows: 3, class: "CommentForm__text"
           = form.submit "投稿", class: "submit__btn"
+    - else
+      .AnonymouseForm
+        .AnonymouseForm__title
+          あなたもコメントしてみませんか
+          %i.far.fa-smile-wink
+        .AnonymouseForm__signUp
+          = link_to "ユーザー登録", new_user_registration_path, class: "btn btn-success"
+        .AnonymouseForm__sub
+          %span すでにアカウントを持っている方は
+          = link_to "ログイン", new_user_session_path
+
 

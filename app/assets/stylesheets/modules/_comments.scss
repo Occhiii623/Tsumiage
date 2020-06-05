@@ -128,3 +128,19 @@
     margin-bottom: 10px;
   }
 }
+
+.AnonymouseForm{
+  background-color: $white;
+  text-align: center;
+  padding: 24px;
+  margin-bottom: 30px;
+
+  &__title{
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  &__signUp{
+    margin: 20px auto;
+  }
+}
