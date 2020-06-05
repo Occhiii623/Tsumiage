@@ -10,7 +10,7 @@
 ## 💬 Description
 
 このアプリは、Twitterの『#今日の積み上げ』というハッシュダグから着想を得ました。</br>
-日々の行動して成長したと思うことを記録するアプリです。</br>
+日々成長したと思うことを記録するアプリです。</br>
 **「習慣づけたいことがあるけど（目標があるけど）、続かない・・・」**</br>
 そんな人に、自分の努力を記録してモチベーションを維持してほしいと思い作りました！
 
@@ -47,9 +47,9 @@
 
 1. ログイン後、投稿の詳細画面の下部からコメントを入力できます。
 
-<h3 align="center">- タグを検索する -</h3>
+<h3 align="center">- 投稿内容&タグを検索する -</h3>
 <p align="center">
-<img src="https://i.gyazo.com/fd1d97eca5fc94a92b11d220fa806a52.png" width="500px">
+<img src="https://user-images.githubusercontent.com/62282502/83851074-c99bb780-a74c-11ea-9e9d-f1633bc51cdf.jpg" width="500px">
 </p>
 
 <h3 align="center">- 「いいね！」をつける -</h3>
