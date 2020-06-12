@@ -90,3 +90,5 @@ gem "jquery-rails"
 gem 'rails-i18n'
 gem 'bootstrap', '~> 4.3.1'
 gem "kaminari", ">= 1.2.1"
+gem 'omniauth-google-oauth2'
+gem "omniauth-rails_csrf_protection"
