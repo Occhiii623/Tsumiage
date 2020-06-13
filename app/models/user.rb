@@ -2,7 +2,7 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: [:google_oauth2]
 
   validates :nickname, presence: true, uniqueness: true, length: { maximum: 6 }
   validates :introduction, length: { maximum: 180 }
@@ -16,8 +16,22 @@ class User < ApplicationRecord
   has_many :followers, through: :reverse_of_relationships, source: :user
   has_many :likes, dependent: :destroy
   has_many :liked_posts, through: :likes, source: :post
+  has_many :sns_credentials
 
   mount_uploader :icon, IconUploader
+
+  def self.from_omniauth(auth)
+    sns = SnsCredential.where(provider: auth.provider, uid: auth.uid).first_or_create
+    user = sns.user || User.where(email: auth.info.email).first_or_initialize(
+      nickname: auth.info.name,
+         email: auth.info.email
+    )
+    if user.persisted?
+      sns.user = user
+      sns.save
+    end
+    user
+  end
 
 # 現在パスワードなしでも更新できるように設定
   def update_with_password(params, *options)
