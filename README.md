@@ -80,9 +80,9 @@
   <a href="https://aws.amazon.com/jp/aws-jp-introduction/aws-jp-webinar-service-cut/"><img src="https://user-images.githubusercontent.com/62282502/83244460-5c32d880-a1da-11ea-87f6-e906d7ce16dc.png" height="45px"></a>
 </p>
           
-## 🌐 App URL
+## 🌐 App URL（現在インスタンスを停止中）
 
-### **https://www.tsumiage.site/**  
+### ~~**https://www.tsumiage.site/**~~
 </br>
 
 ## :cloud: Infrastructure Configuration Diagram
