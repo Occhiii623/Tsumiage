@@ -97,4 +97,3 @@
 ## :blush: Author
 
 - <a href="https://github.com/Occhiii623">Github</a></br>
-- <a href="https://twitter.com/jun_kagura623">Twitter</a> 
